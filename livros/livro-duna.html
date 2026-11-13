@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duna - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop id="videoFundo">
+        <source src="../img/espacio.mp4" type="video/mp4">
+    </video>
+
+    <header class="header-persistente">
+        <a href="../index.html">
+            <img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci">
+        </a>
+
+        <div class="menu-links">
+            <a href="../index.html">⬅ Voltar ao Catálogo</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-interno-livro">
+        <img src="../img/41MRn6hy8-L._SY445_SX342_ML2_.jpg" alt="Duna">
+
+        <h2>Duna</h2>
+
+        <div class="barra-acoes-obra">
+            <button type="button" id="btnAbrirDegustacaoDireta" class="btn-acao-kindle">📖 Ler Trecho (Modo Kindle)</button>
+            <button type="button" id="btnFavoritarDireto" class="btn-acao-fav">🤍 Favoritar Obra</button>
+            <button type="button" id="btnCompartilharDireto" class="btn-acao-share">🔗 Compartilhar Link</button>
+        </div>
+
+        <div id="gavetaLeitorKindle" class="gaveta-kindle">
+            <div class="gaveta-kindle-topo">
+                <strong style="font-size:13px;">📖 LEITOR DIGITAL • CAPÍTULO 1 (AMOSTRA GRATUITA)</strong>
+                <div style="display:flex; gap:6px;">
+                    <button type="button" id="btnKindleTemaPapel" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:#e8dcc2; color:#2c221e; font-size:11px; font-weight:bold; cursor:pointer;">☀️ Papel</button>
+                    <button type="button" id="btnKindleTemaEscuro" style="padding:4px 10px; border-radius:6px; border:1px solid #30363d; background:#161b22; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">🌙 Noturno</button>
+                    <button type="button" id="btnKindleAumentarFonte" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:transparent; color:inherit; font-size:11px; font-weight:bold; cursor:pointer;">A+</button>
+                    <button type="button" id="btnFecharGavetaKindle" style="padding:4px 10px; border-radius:6px; border:none; background:#da3633; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">Fechar ✖</button>
+                </div>
+            </div>
+            <p id="textoPaginaKindle">
+                "Não devo ter medo. O medo é o assassino da mente. O medo é a pequena morte que traz a aniquilação total. Enfrentarei o meu medo. Permitirei que passe por cima e através de mim. E quando tiver passado, voltarei o olho interior para ver o seu rastro. Onde o medo não estiver mais, nada restará. Apenas eu permanecerei..."
+            </p>
+        </div>
+
+        <h3>Especificações do Terminal</h3>
+        <p><strong>Autor:</strong> Frank Herbert</p>
+        <p><strong>Gênero:</strong> Ficção Científica, Ecologia & Política Espacial</p>
+        <p><strong>Sinopse:</strong> Vencedor dos prêmios Hugo e Nebula, Duna narra a jornada épica de Paul Atreides no planeta desértico de Arrakis — a única fonte da especiaria melange, a substância mais valiosa do universo. Uma obra-prima sobre ecologia, sobrevivência e poder.</p>
+
+        <div class="ficha-seed-box">
+            <div class="ficha-seed-topo">
+                <strong style="color:#58a6ff; font-size:15px;">🏛️ Ficha Catalográfica & Diretrizes SEED-PR</strong>
+                <span style="background:rgba(0,255,136,0.15); border:1px solid #00ff88; color:#00ff88; font-size:11px; font-weight:bold; padding:3px 10px; border-radius:12px;">Acervo Estadual Catalogado</span>
+            </div>
+            <div class="ficha-seed-grid">
+                <div><strong style="color:#fff;">📌 ISBN-13:</strong> 978-85-7657-313-5</div>
+                <div><strong style="color:#fff;">🗂️ Classificação CDD:</strong> 813.54 (Ficção Científica)</div>
+                <div><strong style="color:#fff;">📍 Localização Física:</strong> Corredor A • Estante 02</div>
+                <div><strong style="color:#fff;">📄 Edição:</strong> 680 páginas • Editora Aleph</div>
+                <div><strong style="color:#fff;">🎯 Faixa Indicada:</strong> A partir de 14 anos</div>
+                <div><strong style="color:#fff;">⏱️ Tempo Médio:</strong> ~11h 20min de leitura</div>
+            </div>
+            <div class="ficha-curiosidade">
+                <strong style="color:#f1c40f;">💡 Curiosidade Ecológica:</strong> Frank Herbert passou seis anos estudando dunas reais no Oregon (EUA) para criar o ecossistema realista do planeta Arrakis!
+            </div>
+            <div class="ficha-bncc">
+                <p style="margin:0 0 5px 0;"><strong style="color:#ffd700;">🎓 Alinhamento BNCC / Paraná:</strong> Biologia (Ecologia), Geografia e Sociologia (EM13CNT206 / EM13CHS301)</p>
+                <p style="margin:0;"><strong style="color:#58a6ff;">🚀 Foco ENEM / UFPR:</strong> Repertório estratégico sobre crise hídrica, preservação ambiental e geopolítica de recursos naturais.</p>
+            </div>
+        </div>
+
+        <p id="statusEstoqueLivro" style="font-size:15px; margin: 14px 0;">📦 Estoque Físico Local: <strong style="color:#00ff88;">4 exemplar(es) disponível(is)</strong></p>
+
+        <h3>Solicitar Retirada</h3>
+        <form id="formRetiradaLivro">
+            <label for="alunoNomeLivro">Nome Completo do Aluno:</label>
+            <input type="text" id="alunoNomeLivro" placeholder="Digite seu nome completo" required>
+
+            <label for="alunoTurmaLivro">Turma:</label>
+            <input type="text" id="alunoTurmaLivro" placeholder="Ex: 2º Técnico S" required>
+
+            <button type="submit" class="btn-confirmar">📚 Confirmar Empréstimo</button>
+        </form>
+
+        <div class="vitrine-relacionados">
+            <h4>✨ Quem leu "Duna" também gostou:</h4>
+            <div class="grid-relacionados">
+                <a href="livro-mochileiro.html" class="card-relacionado">
+                    <img src="../img/81zQDb6GMVL._SY385_.jpg" alt="O Guia do Mochileiro das Galáxias">
+                    <div>
+                        <strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">O Guia do Mochileiro</strong>
+                        <span style="font-size:12px; color:#58a6ff; font-weight:bold;">Ficção Científica • Ver Obra ➔</span>
+                    </div>
+                </a>
+                <a href="livro-fundacao.html" class="card-relacionado">
+                    <img src="../img/fe6e2c3516bd9f9f968ccae1a23de65a.png" alt="Fundação">
+                    <div>
+                        <strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Fundação</strong>
+                        <span style="font-size:12px; color:#58a6ff; font-weight:bold;">Império Galáctico • Ver Obra ➔</span>
+                    </div>
+                </a>
+                <a href="livro-1984.html" class="card-relacionado">
+                    <img src="../img/51oiPQONvoL._SY445_SX342_ML2_.jpg" alt="1984">
+                    <div>
+                        <strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">1984</strong>
+                        <span style="font-size:12px; color:#58a6ff; font-weight:bold;">Distopia Clássica • Ver Obra ➔</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao-comentarios">
+        <h3 style="color:#58a6ff; font-size:16px; text-transform:uppercase; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:8px;">Avaliações e Terminais de Opinião</h3>
+        <div id="listaComentarios">
+            <div class="comentario-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <strong style="color:#58a6ff; font-size:14px;">👤 Gabriel Souza (3º Ano A)</strong>
+                    <span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span>
+                </div>
+                <p style="color:#d0d7de; font-size:14px;">A construção de mundo de Arrakis é surreal! Muito melhor ler o livro antes de assistir aos filmes.</p>
+            </div>
+        </div>
+
+        <form id="formNovoComentario" style="margin-top:16px;">
+            <label for="notaComentarioLivro">Sua Nota:</label>
+            <select id="notaComentarioLivro">
+                <option value="5">★★★★★ - Excelente</option>
+                <option value="4">★★★★☆ - Muito Bom</option>
+                <option value="3">★★★☆☆ - Bom</option>
+                <option value="2">★★☆☆☆ - Regular</option>
+                <option value="1">★☆☆☆☆ - Ruim</option>
+            </select>
+            <textarea id="textoNovoComentario" rows="3" placeholder="Escreva sua opinião sobre a obra..." required></textarea>
+            <button type="submit" class="btn-publicar">Publicar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="../JS/temas.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tituloObra = "Duna";
+            const gavetaKindle = document.getElementById("gavetaLeitorKindle");
+            const textoKindle = document.getElementById("textoPaginaKindle");
+            const btnFav = document.getElementById("btnFavoritarDireto");
+            let tamanhoFonte = 16;
+
+            let favs = JSON.parse(localStorage.getItem("favoritosBiblioteca")) || [];
+            if (favs.includes(tituloObra)) btnFav.textContent = "❤️ Salvo nos Favoritos";
+
+            document.addEventListener("click", function (e) {
+                if (e.target.id === "btnAbrirDegustacaoDireta") gavetaKindle.style.display = gavetaKindle.style.display === "none" ? "block" : "none";
+                if (e.target.id === "btnFecharGavetaKindle") gavetaKindle.style.display = "none";
+                if (e.target.id === "btnKindleTemaPapel") { gavetaKindle.style.background = "#f4ecd8"; gavetaKindle.style.color = "#2c221e"; }
+                if (e.target.id === "btnKindleTemaEscuro") { gavetaKindle.style.background = "#0d1117"; gavetaKindle.style.color = "#e6edf3"; }
+                if (e.target.id === "btnKindleAumentarFonte") { tamanhoFonte = tamanhoFonte >= 22 ? 16 : tamanhoFonte + 2; textoKindle.style.setProperty("font-size", tamanhoFonte + "px", "important"); }
+                if (e.target.id === "btnFavoritarDireto") {
+                    favs = JSON.parse(localStorage.getItem("favoritosBiblioteca")) || [];
+                    if (favs.includes(tituloObra)) { favs = favs.filter(f => f !== tituloObra); btnFav.textContent = "🤍 Favoritar Obra"; }
+                    else { favs.push(tituloObra); btnFav.textContent = "❤️ Salvo nos Favoritos"; }
+                    localStorage.setItem("favoritosBiblioteca", JSON.stringify(favs));
+                }
+                if (e.target.id === "btnCompartilharDireto") {
+                    navigator.clipboard.writeText(window.location.href).then(() => alert("🔗 Link de Duna copiado!")).catch(() => alert("🔗 Link: " + window.location.href));
+                }
+            });
+
+            let estoqueGlobal = JSON.parse(localStorage.getItem("estoqueBiblioteca")) || {};
+            if (estoqueGlobal[tituloObra] === undefined) { estoqueGlobal[tituloObra] = 4; localStorage.setItem("estoqueBiblioteca", JSON.stringify(estoqueGlobal)); }
+
+            function atualizarEstoque() {
+                const qtd = estoqueGlobal[tituloObra];
+                document.getElementById("statusEstoqueLivro").innerHTML = qtd > 0
+                    ? `📦 Estoque Físico Local: <strong style="color:#00ff88;">${qtd} exemplar(es) disponível(is)</strong>`
+                    : `📦 Estoque Físico Local: <strong style="color:#ff6b6b;">Esgotado no momento</strong>`;
+            }
+            atualizarEstoque();
+
+            const userLogado = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+            if (userLogado && !userLogado.ehVisitante) {
+                document.getElementById("alunoNomeLivro").value = userLogado.nome;
+                if (userLogado.turma) document.getElementById("alunoTurmaLivro").value = userLogado.turma;
+            }
+
+            document.getElementById("formRetiradaLivro").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const user = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                if (!user || user.ehVisitante) { alert("🔒 Entre na sua Conta Oficial para retirar livros!"); if (window.abrirPainelConta) window.abrirPainelConta(); return; }
+                if (estoqueGlobal[tituloObra] <= 0) { alert("⚠️ Exemplares esgotados!"); return; }
+                const prazo = new Date(Date.now() + 14 * 86400000).toLocaleDateString("pt-BR");
+                estoqueGlobal[tituloObra] -= 1;
+                localStorage.setItem("estoqueBiblioteca", JSON.stringify(estoqueGlobal));
+                if (!user.emprestimos) user.emprestimos = [];
+                user.emprestimos.push({ livro: tituloObra, dataRetirada: new Date().toLocaleDateString("pt-BR"), dataDevolucao: prazo });
+                localStorage.setItem("usuarioRedeBiblioteca", JSON.stringify(user));
+                atualizarEstoque();
+                alert(`🎉 EMPRÉSTIMO CONFIRMADO!\n\n📖 ${tituloObra}\n👤 ${user.nome}\n📅 Devolver até: ${prazo}`);
+            });
+
+            document.getElementById("formNovoComentario").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const user = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                const nomeAutor = (user && !user.ehVisitante) ? `${user.nome} (@${user.username})` : "Leitor Visitante";
+                const texto = document.getElementById("textoNovoComentario").value.trim();
+                const notaSel = document.getElementById("notaComentarioLivro");
+                if (!texto) return;
+                const novoDiv = document.createElement("div");
+                novoDiv.className = "comentario-item";
+                novoDiv.style.cssText = "margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);";
+                novoDiv.innerHTML = `<div style="display:flex; justify-content:space-between; margin-bottom:6px;"><strong style="color:#00ff88; font-size:14px;">👤 ${nomeAutor}</strong><span style="color:#ffd700; font-size:13px; font-weight:bold;">${notaSel.options[notaSel.selectedIndex].text}</span></div><p style="color:#d0d7de; font-size:14px;">${texto}</p>`;
+                document.getElementById("listaComentarios").appendChild(novoDiv);
+                document.getElementById("textoNovoComentario").value = "";
+            });
+        });
+    </script>
+</body>
+
+</html>

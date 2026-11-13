@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Capataz da Ciência</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+    <style>
+        html, body {
+            background: transparent !important;
+            background-color: transparent !important;
+            background-image: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="videoFundo">
+        <source src="../img/espacio.mp4" type="video/mp4">
+    </video>
+
+    <header class="header-persistente">
+        <a href="../index.html">
+            <img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci">
+        </a>
+        <div class="menu-links">
+            <a href="../index.html">⬅ Voltar ao Catálogo</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta do Google conectada"></div>
+            
+            <select id="seletorTema" style="background: rgba(22, 27, 34, 0.8); border: 1px solid #30363d; color: #f0f6fc; padding: 6px 12px; margin-left: 10px; font-size: 13px; border-radius: 6px; cursor: pointer; outline: none;">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <section class="container-interno-livro">
+        <div class="layout-detalhes">
+            <img src="../img/OIP3132131.webp" alt="Capa" class="capa-interna">
+
+            <div class="dados-livro">
+                <h2>O Capataz da Ciência</h2>
+                <h3>Especificações do Terminal</h3>
+                <p><strong>Autor:</strong> Divulgação Científica</p>
+                <p><strong>Gênero:</strong> Ciências</p>
+                
+                <p style="margin-top: 15px; font-size: 14px; color: #ccc; line-height: 1.6; max-width: 500px;">
+                    <strong>Sinopse:</strong> Análise crítica e histórica sobre os bastidores da produção científica, laboratórios e as engrenagens que movem o conhecimento e a pesquisa no mundo moderno.
+                </p>
+                
+                <div class="painel-estoque-real">
+                    <p>📦 Estoque Físico Local: <strong>Carregando...</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="secao-emprestimo-interna">
+            <h3>Solicitar Retirada</h3>
+            <form class="formulario-futurista">
+                <div class="grupo-input">
+                    <label>Nome Completo do Aluno:</label>
+                    <input type="text" placeholder="Digite seu nome completo" required>
+                </div>
+                <div class="grupo-input" style="margin-top: 15px;">
+                    <label>Turma:</label>
+                    <input type="text" placeholder="Ex: 2º Técnico S" required>
+                </div>
+                <button type="submit" class="btn-confirmar" style="margin-top: 20px;">Confirmar Empréstimo</button>
+            </form>
+        </div>
+
+        <div class="secao-comentarios-dinamica">
+            <h3>Avaliações e Terminais de Opinião</h3>
+            <br>
+            <form class="formulario-comentario">
+                <label>Sua Nota:</label>
+                <textarea class="input-comentario" rows="3" placeholder="Escreva sua opinião..." required></textarea>
+                <button type="submit" class="btn-confirmar">Publicar</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="../JS/temas.js"></script>
+    <script src="../JS/emprestimo.js"></script>
+    <script src="../JS/comentarios.js"></script>
+</body>
+</html>

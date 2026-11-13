@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro & Carteirinha Digital - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="CSS/global.css">
+    <style>
+        body {
+            padding-top: 130px !important;
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .container-central-cadastro {
+            max-width: 1040px;
+            margin: 0 auto 50px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 26px;
+            align-items: start;
+        }
+
+        .card-vidro-cadastro {
+            background: rgba(13, 17, 23, 0.82);
+            border: 1px solid rgba(47, 129, 247, 0.45);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 28px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        .card-vidro-cadastro h2 {
+            color: #58a6ff;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .campo-form-cad {
+            margin-bottom: 14px;
+        }
+
+        .campo-form-cad label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            color: #c9d1d9;
+            margin-bottom: 5px;
+        }
+
+        .campo-form-cad input,
+        .campo-form-cad select {
+            width: 100%;
+            padding: 11px 14px;
+            background: rgba(22, 27, 34, 0.95);
+            border: 1px solid #30363d;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .btn-gerar-carteirinha {
+            width: 100%;
+            padding: 13px;
+            background: linear-gradient(135deg, #238636, #2ea043);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        .carteirinha-estudantil-box {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1f1635 100%);
+            border: 2px solid #a371f7;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 12px 40px rgba(137, 87, 229, 0.35);
+        }
+
+        .selo-topo-carteira {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+        }
+
+        .foto-rosto-carteira {
+            width: 86px;
+            height: 108px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #00ff88;
+            background: #161b22;
+            display: block;
+        }
+
+        .btn-trocar-foto-carteira {
+            margin-top: 6px;
+            background: #21262d;
+            border: 1px solid #58a6ff;
+            color: #58a6ff;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 6px 4px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            width: 86px;
+            box-sizing: border-box;
+        }
+
+        .btn-trocar-foto-carteira:hover {
+            background: #2f81f7;
+            color: #ffffff;
+        }
+
+        .qr-code-moldura {
+            background: #ffffff !important;
+            padding: 6px !important;
+            border-radius: 10px !important;
+            width: 96px !important;
+            height: 96px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+        }
+
+        .status-ativo-pill {
+            display: inline-block;
+            margin-top: 8px;
+            background: rgba(0, 255, 136, 0.14);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .rodape-institucional {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 40px 0 0 0 !important;
+            box-sizing: border-box !important;
+            clear: both !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="videoFundo">
+        <source src="img/espacio.mp4" type="video/mp4">
+    </video>
+
+    <header class="header-persistente">
+        <a href="index.html">
+            <img src="img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci">
+        </a>
+
+        <div class="menu-links">
+            <a href="votacao.html" style="color: #00ff88;">🗳️ Votação</a>
+            <span class="divisor-menu-futurista"
+                style="display:inline-block; width:2px; height:26px; background:linear-gradient(180deg, transparent, #a371f7, #2f81f7, transparent); margin:0 4px; box-shadow:0 0 8px #a371f7;"></span>
+            <a href="index.html">Ficção & Ciências</a>
+            <a href="exatas_humanas.html">Matemática & História</a>
+            <a href="gibis.html">Gibis</a>
+            <a href="cadastro.html" style="border-color: #a371f7; color: #ffffff;">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-central-cadastro">
+        <div class="card-vidro-cadastro">
+            <h2>🪪 Registro Oficial do Leitor</h2>
+            <p style="color: #8b949e; font-size: 13px; margin-bottom: 18px;">Preencha seus dados e envie sua foto facial
+                para emitir sua carteirinha digital da biblioteca.</p>
+
+            <form id="formCadastroCompletoPagina">
+                <div class="campo-form-cad">
+                    <label>Nome Completo do Aluno:</label>
+                    <input type="text" id="cadNomeCompleto" placeholder="Ex: Pedro Henrique Gargantini" required>
+                </div>
+
+                <div class="campo-form-cad">
+                    <label>Nome de Usuário Único (@usuario):</label>
+                    <input type="text" id="cadUsername" placeholder="Ex: pedro_dev" required>
+                </div>
+
+                <div class="campo-form-cad">
+                    <label>E-mail Institucional ou Pessoal:</label>
+                    <input type="email" id="cadEmail" placeholder="aluno@escola.pr.gov.br" required>
+                </div>
+
+                <div class="campo-form-cad">
+                    <label>Instituição / Colégio (Paraná):</label>
+                    <select id="cadEscola">
+                        <option value="Colégio Estadual Humberto de Alencar Castelo Branco (Pinhais)">Colégio Estadual
+                            Humberto de Alencar Castelo Branco (Pinhais)</option>
+                        <option value="IFPR - Instituto Federal do Paraná (Campus Pinhais)">IFPR - Instituto Federal do
+                            Paraná (Campus Pinhais)</option>
+                        <option value="Colégio Estadual Daniel Rocha (Pinhais)">Colégio Estadual Daniel Rocha (Pinhais)
+                        </option>
+                        <option value="Colégio Estadual Arnaldo Jansen (Pinhais)">Colégio Estadual Arnaldo Jansen
+                            (Pinhais)</option>
+                        <option value="Colégio Estadual do Paraná - CEP (Curitiba)">Colégio Estadual do Paraná - CEP
+                            (Curitiba)</option>
+                        <option value="Outra Instituição">Outra Instituição</option>
+                    </select>
+                </div>
+
+                <div class="campo-form-cad">
+                    <label>Turma / Série:</label>
+                    <input type="text" id="cadTurma" placeholder="Ex: 2º Técnico em Desenvolvimento de Sistemas"
+                        required>
+                </div>
+
+                <div class="campo-form-cad">
+                    <label>Telefone do Aluno (Obrigatório):</label>
+                    <input type="text" id="cadTelAluno" placeholder="(41) 99999-9999" required>
+                </div>
+
+                <div class="campo-form-cad">
+                    <label>Telefone do Responsável Legal (Obrigatório):</label>
+                    <input type="text" id="cadTelResp" placeholder="(41) 98888-8888" required>
+                </div>
+
+                <div class="campo-form-cad">
+                    <label>Senha de Acesso:</label>
+                    <input type="password" id="cadSenha" placeholder="Mínimo 4 caracteres" required>
+                </div>
+
+                <div class="campo-form-cad"
+                    style="background: rgba(241, 196, 15, 0.08); border: 1px dashed #f1c40f; padding: 12px; border-radius: 10px;">
+                    <label style="color: #f1c40f;">📸 Foto Facial Obrigatória (Rosto Nítido / RG):</label>
+                    <input type="file" id="cadFotoRosto" accept="image/*" style="padding: 8px; font-size: 12px;"
+                        required>
+                    <span style="display: block; color: #c9d1d9; font-size: 11px; margin-top: 5px;">
+                        ⚠️ Esta foto é exclusiva da sua carteirinha e não altera sua foto de perfil do site.
+                    </span>
+                </div>
+
+                <button type="submit" class="btn-gerar-carteirinha">✨ Emitir Carteirinha Digital</button>
+            </form>
+        </div>
+        <div class="card-vidro-cadastro">
+            <h2>🎫 Sua Carteirinha Digital</h2>
+            <p style="color: #8b949e; font-size: 13px; margin-bottom: 18px;">Apresente esta credencial com sua foto
+                facial e QR Code no balcão da biblioteca para retirar e devolver livros.</p>
+
+            <div class="carteirinha-estudantil-box">
+                <div class="selo-topo-carteira">
+                    <span style="color: #a371f7; font-weight: bold; font-size: 12px; letter-spacing: 1px;">REDE
+                        BIBLIOTECA PR</span>
+                    <span style="color: #ffd700; font-size: 12px; font-weight: bold;">2026</span>
+                </div>
+
+                <div style="display: flex; gap: 14px; align-items: center; flex-wrap: nowrap;">
+                    <div style="flex-shrink: 0;">
+                        <img id="imgFotoRostoCarteira" class="foto-rosto-carteira"
+                            src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://w3.org' viewBox='0 0 100 120'%3E%3Crect width='100' height='120' fill='%23161b22'/%3E%3Ccircle cx='50' cy='42' r='20' fill='%2358a6ff'/%3E%3Cpath d='M20 105 C20 78, 80 78, 80 105 Z' fill='%2358a6ff'/%3E%3C/svg%3E"
+                            alt="Foto Documento">
+                        <label for="inputTrocarFotoCarteiraDireto" class="btn-trocar-foto-carteira">📷 Alterar
+                            Foto</label>
+                        <input type="file" id="inputTrocarFotoCarteiraDireto" accept="image/*" style="display: none;">
+                    </div>
+
+                    <div style="flex: 1; min-width: 0; word-wrap: break-word;">
+                        <p style="font-size: 15px; color: #ffffff; font-weight: bold; margin: 0 0 3px 0;"
+                            id="cartNomeAluno">Visitante da Biblioteca</p>
+                        <p style="color: #00ff88; font-weight: bold; font-size: 12px; margin: 0 0 6px 0;"
+                            id="cartUserAluno">@visitante</p>
+                        <p style="font-size: 11px; color: #c9d1d9; margin: 3px 0;">🏫 <span id="cartEscolaAluno">Colégio
+                                Humberto Castelo Branco</span></p>
+                        <p style="font-size: 11px; color: #c9d1d9; margin: 3px 0;">🎓 Turma: <strong
+                                style="color: #fff;" id="cartTurmaAluno">Não informada</strong></p>
+                        <p style="font-size: 11px; color: #c9d1d9; margin: 3px 0;">🆔 ID: <strong style="color: #fff;"
+                                id="cartMatriculaId">#BIB-0000</strong></p>
+                        <span class="status-ativo-pill" id="cartStatusBadge">⚠️ Foto Facial Pendente</span>
+                    </div>
+
+                    <div class="qr-code-moldura" id="boxQrCodeVetor"></div>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 18px; background: rgba(241, 196, 15, 0.08); border: 1px solid rgba(241, 196, 15, 0.35); padding: 14px; border-radius: 10px;">
+                <strong style="color: #f1c40f; font-size: 13px; display: block; margin-bottom: 4px;">🛡️ Foto Exclusiva
+                    da Carteirinha</strong>
+                <span style="color: #c9d1d9; font-size: 12px; line-height: 1.4;">Clique em <strong>Alterar Foto</strong>
+                    para enquadrar seu rosto igual no WhatsApp/Instagram. Esta foto fica apenas no seu documento escolar
+                    e não muda a foto de perfil do topo.</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="rodape-institucional">
+        <div class="rodape-conteudo">
+            <div class="rodape-bloco">
+                <h5>Instituição</h5>
+                <p>Colégio Estadual Humberto de Alencar Castelo Branco</p>
+                <p>Ensino Técnico em Desenvolvimento de Sistemas</p>
+            </div>
+            <div class="rodape-bloco">
+                <h5>Contatos / Suporte</h5>
+                <p>E-mail: suporte.biblioteca@escola.edu.br</p>
+                <p>Pinhais - Paraná</p>
+            </div>
+            <div class="rodape-bloco">
+                <h5>Feira de Ciências 2026</h5>
+                <p>Plataforma Unificada de Acervo Escolar.</p>
+                <p>© 2026 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="JS/bibliotecario.js"></script>
+    <script src="JS/temas.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            function gerarSvgQrCodeUnico(textoDados) {
+                let hash = 0;
+                for (let i = 0; i < textoDados.length; i++) {
+                    hash = ((hash << 5) - hash) + textoDados.charCodeAt(i);
+                    hash |= 0;
+                }
+
+                let modulos = "";
+                for (let r = 0; r < 21; r++) {
+                    for (let c = 0; c < 21; c++) {
+                        if ((r < 8 && c < 8) || (r < 8 && c > 12) || (r > 12 && c < 8)) continue;
+                        const val = Math.abs(Math.sin(hash + r * 37 + c * 13));
+                        if (val > 0.46) {
+                            modulos += `<rect x="${c * 4 + 8}" y="${r * 4 + 8}" width="4" height="4" fill="#0d1117"/>`;
+                        }
+                    }
+                }
+
+                return `<svg viewBox="0 0 100 100" width="84" height="84" xmlns="http://w3.org">
+                    <rect width="100" height="100" fill="#ffffff"/>
+                    <rect x="8" y="8" width="28" height="28" fill="#0d1117"/><rect x="12" y="12" width="20" height="20" fill="#ffffff"/><rect x="16" y="16" width="12" height="12" fill="#0d1117"/>
+                    <rect x="64" y="8" width="28" height="28" fill="#0d1117"/><rect x="68" y="12" width="20" height="20" fill="#ffffff"/><rect x="72" y="16" width="12" height="12" fill="#0d1117"/>
+                    <rect x="8" y="64" width="28" height="28" fill="#0d1117"/><rect x="12" y="68" width="20" height="20" fill="#ffffff"/><rect x="16" y="72" width="12" height="12" fill="#0d1117"/>
+                    ${modulos}
+                </svg>`;
+            }
+
+            function abrirEditorArrasteWhatsApp(imagemSrc, aoConcluir) {
+                const modalCrop = document.createElement("div");
+                modalCrop.style.cssText = "position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.92); backdrop-filter:blur(8px); z-index:99999999; display:flex; justify-content:center; align-items:center; padding:20px; font-family:'Segoe UI', sans-serif;";
+
+                modalCrop.innerHTML = `
+                    <div style="background:#0d1117; border:2px solid #2f81f7; border-radius:18px; padding:22px; max-width:360px; width:100%; text-align:center; color:#fff; box-shadow:0 15px 50px rgba(0,0,0,0.95);">
+                        <h3 style="margin:0 0 6px 0; color:#58a6ff; font-size:18px;">✂️ Ajustar Foto da Carteirinha</h3>
+                        <p style="margin:0 0 14px 0; color:#8b949e; font-size:12px;">Segure e arraste a imagem para centralizar seu rosto:</p>
+
+                        <div id="caixaArraste" style="width:210px; height:260px; margin:0 auto 14px auto; border-radius:14px; overflow:hidden; position:relative; border:2px solid #00ff88; background:#161b22; cursor:grab; touch-action:none;">
+                            <img id="fotoArrastavel" src="${imagemSrc}" draggable="false" style="position:absolute; top:0; left:0; transform-origin:center center; user-select:none; pointer-events:none;">
+                            <div style="position:absolute; inset:14px; border-radius:50%; border:2px dashed rgba(255,255,255,0.6); box-shadow:0 0 0 999px rgba(0,0,0,0.45); pointer-events:none;"></div>
+                        </div>
+
+                        <div style="margin-bottom:16px;">
+                            <label style="font-size:12px; color:#c9d1d9; display:block; margin-bottom:5px;">🔍 Zoom</label>
+                            <input type="range" id="zoomArraste" min="1" max="2.8" step="0.05" value="1" style="width:85%; cursor:pointer;">
+                        </div>
+
+                        <div style="display:flex; gap:10px;">
+                            <button type="button" id="cancelarArraste" style="flex:1; padding:11px; background:#21262d; border:1px solid #30363d; color:#c9d1d9; border-radius:8px; font-weight:bold; cursor:pointer;">Cancelar</button>
+                            <button type="button" id="salvarArraste" style="flex:1; padding:11px; background:#238636; border:none; color:#fff; border-radius:8px; font-weight:bold; cursor:pointer;">✅ Concluir</button>
+                        </div>
+                    </div>
+                `;
+
+                document.body.appendChild(modalCrop);
+
+                const caixa = modalCrop.querySelector("#caixaArraste");
+                const foto = modalCrop.querySelector("#fotoArrastavel");
+                const zoom = modalCrop.querySelector("#zoomArraste");
+
+                let posX = 0, posY = 0, escala = 1;
+                let movendo = false, startX = 0, startY = 0;
+
+                foto.onload = function () {
+                    const prop = Math.max(210 / foto.naturalWidth, 260 / foto.naturalHeight);
+                    foto.style.width = (foto.naturalWidth * prop) + "px";
+                    foto.style.height = (foto.naturalHeight * prop) + "px";
+                    posX = (210 - parseFloat(foto.style.width)) / 2;
+                    posY = (260 - parseFloat(foto.style.height)) / 2;
+                    aplicarMovimento();
+                };
+
+                function aplicarMovimento() {
+                    foto.style.transform = `translate(${posX}px, ${posY}px) scale(${escala})`;
+                }
+
+                caixa.addEventListener("pointerdown", (e) => {
+                    movendo = true;
+                    startX = e.clientX - posX;
+                    startY = e.clientY - posY;
+                    caixa.style.cursor = "grabbing";
+                });
+
+                window.addEventListener("pointermove", (e) => {
+                    if (!movendo) return;
+                    posX = e.clientX - startX;
+                    posY = e.clientY - startY;
+                    aplicarMovimento();
+                });
+
+                window.addEventListener("pointerup", () => {
+                    movendo = false;
+                    caixa.style.cursor = "grab";
+                });
+
+                zoom.addEventListener("input", () => {
+                    escala = parseFloat(zoom.value);
+                    aplicarMovimento();
+                });
+
+                modalCrop.querySelector("#cancelarArraste").addEventListener("click", () => modalCrop.remove());
+
+                modalCrop.querySelector("#salvarArraste").addEventListener("click", () => {
+                    const canvas = document.createElement("canvas");
+                    canvas.width = 210;
+                    canvas.height = 260;
+                    const ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "#0d1117";
+                    ctx.fillRect(0, 0, 210, 260);
+
+                    const w = parseFloat(foto.style.width);
+                    const h = parseFloat(foto.style.height);
+                    ctx.save();
+                    ctx.translate(posX + w / 2, posY + h / 2);
+                    ctx.scale(escala, escala);
+                    ctx.drawImage(foto, -w / 2, -h / 2, w, h);
+                    ctx.restore();
+
+                    const resultadoFinal = canvas.toDataURL("image/jpeg", 0.92);
+                    modalCrop.remove();
+                    aoConcluir(resultadoFinal);
+                });
+            }
+
+            function atualizarVisualCarteirinha(user) {
+                const boxQr = document.getElementById("boxQrCodeVetor");
+                if (!user || user.ehVisitante) {
+                    if (boxQr) boxQr.innerHTML = gerarSvgQrCodeUnico("VISITANTE-BIBLIOTECA-2026");
+                    return;
+                }
+
+                document.getElementById("cartNomeAluno").textContent = user.nome;
+                document.getElementById("cartUserAluno").textContent = "@" + user.username;
+                document.getElementById("cartEscolaAluno").textContent = user.escola;
+                document.getElementById("cartTurmaAluno").textContent = user.turma || "Ensino Médio / Técnico";
+
+                const codigoMat = user.matriculaId || ("#BIB-" + Math.floor(1000 + Math.random() * 9000));
+                document.getElementById("cartMatriculaId").textContent = codigoMat;
+
+                const imgEl = document.getElementById("imgFotoRostoCarteira");
+                if (user.fotoCarteirinhaUrl) {
+                    imgEl.src = user.fotoCarteirinhaUrl;
+                    document.getElementById("cartStatusBadge").textContent = "✅ CREDENCIAL ATIVA (FOTO OK)";
+                } else {
+                    document.getElementById("cartStatusBadge").textContent = "⚠️ Envie sua Foto Facial";
+                }
+
+                if (boxQr) boxQr.innerHTML = gerarSvgQrCodeUnico(user.nome + user.username + codigoMat);
+            }
+
+            const usuarioLogado = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+            atualizarVisualCarteirinha(usuarioLogado);
+
+            document.getElementById("inputTrocarFotoCarteiraDireto").addEventListener("change", function (e) {
+                const arquivo = e.target.files[0];
+                if (!arquivo) return;
+
+                const leitor = new FileReader();
+                leitor.onload = function (ev) {
+                    abrirEditorArrasteWhatsApp(ev.target.result, function (fotoRecortada) {
+                        document.getElementById("imgFotoRostoCarteira").src = fotoRecortada;
+                        document.getElementById("cartStatusBadge").textContent = "✅ CREDENCIAL ATIVA (FOTO OK)";
+
+                        const userAtual = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                        if (userAtual && !userAtual.ehVisitante) {
+                            userAtual.fotoCarteirinhaUrl = fotoRecortada;
+                            localStorage.setItem("usuarioRedeBiblioteca", JSON.stringify(userAtual));
+
+                            const banco = JSON.parse(localStorage.getItem("bancoUsuariosRegistrados")) || [];
+                            const idx = banco.findIndex(u => u.username === userAtual.username);
+                            if (idx !== -1) {
+                                banco[idx].fotoCarteirinhaUrl = fotoRecortada;
+                                localStorage.setItem("bancoUsuariosRegistrados", JSON.stringify(banco));
+                            }
+                        }
+                        alert("✅ Foto facial da carteirinha salva! Sua foto de perfil do topo continua intacta.");
+                    });
+                };
+                leitor.readAsDataURL(arquivo);
+            });
+
+            const formCad = document.getElementById("formCadastroCompletoPagina");
+            formCad.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const arquivoFoto = document.getElementById("cadFotoRosto").files[0];
+                if (!arquivoFoto) {
+                    alert("⚠️ FOTO OBRIGATÓRIA! Selecione uma foto legível do seu rosto para emitir a carteirinha.");
+                    return;
+                }
+
+                const nome = document.getElementById("cadNomeCompleto").value.trim();
+                const username = document.getElementById("cadUsername").value.trim().replace(/\s+/g, "_").toLowerCase();
+                const email = document.getElementById("cadEmail").value.trim();
+                const escola = document.getElementById("cadEscola").value;
+                const turma = document.getElementById("cadTurma").value.trim();
+                const telAluno = document.getElementById("cadTelAluno").value.trim();
+                const telResp = document.getElementById("cadTelResp").value.trim();
+                const senha = document.getElementById("cadSenha").value.trim();
+
+                if (username.length < 3 || senha.length < 4) {
+                    alert("⚠️ O usuário deve ter no mínimo 3 letras e a senha no mínimo 4 caracteres!");
+                    return;
+                }
+
+                const bancoUsuarios = JSON.parse(localStorage.getItem("bancoUsuariosRegistrados")) || [];
+                if (bancoUsuarios.some(u => u.username.toLowerCase() === username)) {
+                    alert("🚫 O usuário @" + username + " já está cadastrado! Escolha outro.");
+                    return;
+                }
+
+                const leitor = new FileReader();
+                leitor.onload = function (eventoImg) {
+                    abrirEditorArrasteWhatsApp(eventoImg.target.result, function (fotoRecortada) {
+                        const codigoVerif = Math.floor(100000 + Math.random() * 900000).toString();
+                        const digitado = prompt("CONFIRMAÇÃO DE E-MAIL: Digite o código de 6 dígitos enviado para " + email + " (Código Feira de Ciências: " + codigoVerif + ")");
+
+                        if (digitado !== codigoVerif) {
+                            alert("❌ Código incorreto! Tente novamente.");
+                            return;
+                        }
+
+                        const novoAluno = {
+                            nome: nome,
+                            username: username,
+                            email: email,
+                            emailVerificado: true,
+                            escola: escola,
+                            turma: turma,
+                            telefoneAluno: telAluno,
+                            telefoneResp: telResp,
+                            senha: senha,
+                            provedor: "Cadastro Escolar",
+                            corAvatar: "#2f81f7",
+                            fotoUrl: "",
+                            fotoCarteirinhaUrl: fotoRecortada,
+                            matriculaId: "#BIB-" + Math.floor(1000 + Math.random() * 9000),
+                            notificacoesEmail: true,
+                            emprestimos: [],
+                            ehVisitante: false
+                        };
+
+                        bancoUsuarios.push(novoAluno);
+                        localStorage.setItem("bancoUsuariosRegistrados", JSON.stringify(bancoUsuarios));
+                        localStorage.setItem("usuarioRedeBiblioteca", JSON.stringify(novoAluno));
+
+                        alert("🎉 Carteirinha Digital com Foto Facial emitida com sucesso para " + nome + "!");
+                        location.reload();
+                    });
+                };
+                leitor.readAsDataURL(arquivoFoto);
+            });
+        });
+    </script>
+</body>
+
+</html>

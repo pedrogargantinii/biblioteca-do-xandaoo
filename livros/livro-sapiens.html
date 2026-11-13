@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sapiens: Uma Breve História da Humanidade - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+</head>
+
+<body>
+    <video autoplay muted loop id="videoFundo"><source src="../img/espacio.mp4" type="video/mp4"></video>
+
+    <header class="header-persistente">
+        <a href="../index.html"><img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci"></a>
+        <div class="menu-links">
+            <a href="../index.html">Catálogo</a>
+            <a href="../exatas_humanas.html">⬅ Voltar a Humanas</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-interno-livro">
+        <img src="../img/sapiens.jpg" alt="Sapiens: Uma Breve História da Humanidade">
+        <h2>Sapiens: Uma Breve História da Humanidade</h2>
+
+        <div class="barra-acoes-obra">
+            <button type="button" id="btnAbrirDegustacaoDireta" class="btn-acao-kindle">📖 Ler Trecho (Modo Kindle)</button>
+            <button type="button" id="btnFavoritarDireto" class="btn-acao-fav">🤍 Favoritar Obra</button>
+            <button type="button" id="btnCompartilharDireto" class="btn-acao-share">🔗 Compartilhar Link</button>
+        </div>
+
+        <div id="gavetaLeitorKindle" class="gaveta-kindle">
+            <div class="gaveta-kindle-topo">
+                <strong style="font-size:13px;">📖 LEITOR DIGITAL • CAPÍTULO 1 (AMOSTRA GRATUITA)</strong>
+                <div style="display:flex; gap:6px;">
+                    <button type="button" id="btnKindleTemaPapel" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:#e8dcc2; color:#2c221e; font-size:11px; font-weight:bold; cursor:pointer;">☀️ Papel</button>
+                    <button type="button" id="btnKindleTemaEscuro" style="padding:4px 10px; border-radius:6px; border:1px solid #30363d; background:#161b22; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">🌙 Noturno</button>
+                    <button type="button" id="btnKindleAumentarFonte" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:transparent; color:inherit; font-size:11px; font-weight:bold; cursor:pointer;">A+</button>
+                    <button type="button" id="btnFecharGavetaKindle" style="padding:4px 10px; border-radius:6px; border:none; background:#da3633; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">Fechar ✖</button>
+                </div>
+            </div>
+            <p id="textoPaginaKindle">"Há cerca de 13,5 bilhões de anos, matéria, energia, tempo e espaço surgiram naquilo que é conhecido como o Big Bang. A história dessas características fundamentais do nosso universo é chamada de física. Cerca de 300 mil anos após seu surgimento, matéria e energia começaram a se aglutinar em estruturas complexas chamadas átomos, dando origem à química, à biologia e, há cerca de 70 mil anos, à história da cultura humana..."</p>
+        </div>
+
+        <h3>Especificações do Terminal</h3>
+        <p><strong>Autor:</strong> Yuval Noah Harari</p>
+        <p><strong>Gênero:</strong> História da Humanidade, Antropologia & Evolução Cultural</p>
+        <p><strong>Sinopse:</strong> Um panorama envolvente de 70 mil anos da trajetória humana — desde o surgimento do <em>Homo sapiens</em> na África e a Revolução Cognitiva até as revoluções Agrícola, Científica e Tecnológica que moldaram o mundo moderno.</p>
+
+        <div class="ficha-seed-box">
+            <div class="ficha-seed-topo">
+                <strong style="color:#58a6ff; font-size:15px;">🏛️ Ficha Catalográfica & Diretrizes SEED-PR</strong>
+                <span style="background:rgba(0,255,136,0.15); border:1px solid #00ff88; color:#00ff88; font-size:11px; font-weight:bold; padding:3px 10px; border-radius:12px;">Acervo Estadual Catalogado</span>
+            </div>
+            <div class="ficha-seed-grid">
+                <div><strong style="color:#fff;">📌 ISBN-13:</strong> 978-85-254-3218-6</div>
+                <div><strong style="color:#fff;">🗂️ Classificação CDD:</strong> 909 (História Universal)</div>
+                <div><strong style="color:#fff;">📍 Localização Física:</strong> Corredor D • Estante 02</div>
+                <div><strong style="color:#fff;">📄 Edição:</strong> 464 páginas • Editora L&PM</div>
+                <div><strong style="color:#fff;">🎯 Faixa Indicada:</strong> A partir de 13 anos</div>
+                <div><strong style="color:#fff;">⏱️ Tempo Médio:</strong> ~8h 00min de leitura</div>
+            </div>
+            <div class="ficha-curiosidade">
+                <strong style="color:#f1c40f;">💡 Curiosidade Histórica:</strong> Harari mostra que o grande diferencial do <em>Homo sapiens</em> em relação a outras espécies foi a capacidade de cooperar em grandes grupos criando <strong>histórias compartilhadas</strong> — como leis, dinheiro, nações e direitos humanos!
+            </div>
+            <div class="ficha-bncc">
+                <p style="margin:0 0 5px 0;"><strong style="color:#ffd700;">🎓 Alinhamento BNCC / Paraná:</strong> História Geral, Sociologia, Geografia e Filosofia (EM13CHS102 / EM13CHS501)</p>
+                <p style="margin:0;"><strong style="color:#58a6ff;">🚀 Foco ENEM / UFPR:</strong> Um dos livros mais úteis para interdisciplinaridade em Ciências Humanas e Redação no ENEM e Vestibular UFPR.</p>
+            </div>
+        </div>
+
+        <p id="statusEstoqueLivro" style="font-size:15px; margin: 14px 0;">📦 Estoque Físico Local: <strong style="color:#00ff88;">4 exemplar(es) disponível(is)</strong></p>
+
+        <h3>Solicitar Retirada</h3>
+        <form id="formRetiradaLivro">
+            <label for="alunoNomeLivro">Nome Completo do Aluno:</label>
+            <input type="text" id="alunoNomeLivro" placeholder="Digite seu nome completo" required>
+            <label for="alunoTurmaLivro">Turma:</label>
+            <input type="text" id="alunoTurmaLivro" placeholder="Ex: 2º Técnico S" required>
+            <button type="submit" class="btn-confirmar">📚 Confirmar Empréstimo</button>
+        </form>
+
+        <div class="vitrine-relacionados">
+            <h4>✨ Quem leu "Sapiens" também gostou:</h4>
+            <div class="grid-relacionados">
+                <a href="livro-armas-germes.html" class="card-relacionado">
+                    <img src="../img/capa-armas-germes.jpg" alt="Armas, Germes e Aço">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Armas, Germes e Aço</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Civilizações • Ver ➔</span></div>
+                </a>
+                <a href="livro-riqueza.html" class="card-relacionado">
+                    <img src="../img/riqueza.jpg" alt="História da Riqueza do Homem">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">História da Riqueza</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Economia & História • Ver ➔</span></div>
+                </a>
+                <a href="livro-revolucoes.html" class="card-relacionado">
+                    <img src="../img/revolucoes.jpg" alt="A Era das Revoluções">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">A Era das Revoluções</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Mundo Moderno • Ver ➔</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao-comentarios">
+        <h3 style="color:#58a6ff; font-size:16px; text-transform:uppercase; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:8px;">Avaliações e Terminais de Opinião</h3>
+        <div id="listaComentarios">
+            <div class="comentario-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px;"><strong style="color:#58a6ff; font-size:14px;">👤 Mariana Silva (3º Ano B)</strong><span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span></div>
+                <p style="color:#d0d7de; font-size:14px;">Resume toda a história da humanidade de um jeito claro, crítico e super fácil de lembrar na hora das provas!</p>
+            </div>
+        </div>
+        <form id="formNovoComentario" style="margin-top:16px;">
+            <label for="notaComentarioLivro">Sua Nota:</label>
+            <select id="notaComentarioLivro">
+                <option value="5">★★★★★ - Excelente</option>
+                <option value="4">★★★★☆ - Muito Bom</option>
+                <option value="3">★★★☆☆ - Bom</option>
+                <option value="2">★★☆☆☆ - Regular</option>
+                <option value="1">★☆☆☆☆ - Ruim</option>
+            </select>
+            <textarea id="textoNovoComentario" rows="3" placeholder="Escreva sua opinião sobre a obra..." required></textarea>
+            <button type="submit" class="btn-publicar">Publicar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="../JS/temas.js"></script>
+    <script src="../JS/emprestimo.js"></script>
+</body>
+
+</html>

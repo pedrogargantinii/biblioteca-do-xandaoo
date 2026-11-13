@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundação - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+</head>
+
+<body>
+    <video autoplay muted loop id="videoFundo"><source src="../img/espacio.mp4" type="video/mp4"></video>
+
+    <header class="header-persistente">
+        <a href="../index.html"><img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci"></a>
+        <div class="menu-links">
+            <a href="../index.html">⬅ Voltar ao Catálogo</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-interno-livro">
+        <img src="../img/fe6e2c3516bd9f9f968ccae1a23de65a.png" alt="Fundação">
+        <h2>Fundação</h2>
+
+        <div class="barra-acoes-obra">
+            <button type="button" id="btnAbrirDegustacaoDireta" class="btn-acao-kindle">📖 Ler Trecho (Modo Kindle)</button>
+            <button type="button" id="btnFavoritarDireto" class="btn-acao-fav">🤍 Favoritar Obra</button>
+            <button type="button" id="btnCompartilharDireto" class="btn-acao-share">🔗 Compartilhar Link</button>
+        </div>
+
+        <div id="gavetaLeitorKindle" class="gaveta-kindle">
+            <div class="gaveta-kindle-topo">
+                <strong style="font-size:13px;">📖 LEITOR DIGITAL • CAPÍTULO 1 (AMOSTRA GRATUITA)</strong>
+                <div style="display:flex; gap:6px;">
+                    <button type="button" id="btnKindleTemaPapel" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:#e8dcc2; color:#2c221e; font-size:11px; font-weight:bold; cursor:pointer;">☀️ Papel</button>
+                    <button type="button" id="btnKindleTemaEscuro" style="padding:4px 10px; border-radius:6px; border:1px solid #30363d; background:#161b22; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">🌙 Noturno</button>
+                    <button type="button" id="btnKindleAumentarFonte" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:transparent; color:inherit; font-size:11px; font-weight:bold; cursor:pointer;">A+</button>
+                    <button type="button" id="btnFecharGavetaKindle" style="padding:4px 10px; border-radius:6px; border:none; background:#da3633; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">Fechar ✖</button>
+                </div>
+            </div>
+            <p id="textoPaginaKindle">"Hari Seldon: nasceu no ano 11.988 da Era Galáctica; morreu em 12.069. As datas são mais comumente dadas em termos da atual Era da Fundação, como -79 a 1 E.F. Nascido em Helicon, setor de Arcturus, tornou-se o maior matemático do Império ao desenvolver a Psico-história — a ciência capaz de prever o futuro de bilhões de seres humanos..."</p>
+        </div>
+
+        <h3>Especificações do Terminal</h3>
+        <p><strong>Autor:</strong> Isaac Asimov</p>
+        <p><strong>Gênero:</strong> Ficção Científica Clássica & Império Galáctico</p>
+        <p><strong>Sinopse:</strong> O matemático Hari Seldon prevê a queda inevitável do Império Galáctico e uma era de trinta mil anos de trevas. Para salvar o conhecimento humano, ele cria a Fundação nos confins da galáxia.</p>
+
+        <div class="ficha-seed-box">
+            <div class="ficha-seed-topo">
+                <strong style="color:#58a6ff; font-size:15px;">🏛️ Ficha Catalográfica & Diretrizes SEED-PR</strong>
+                <span style="background:rgba(0,255,136,0.15); border:1px solid #00ff88; color:#00ff88; font-size:11px; font-weight:bold; padding:3px 10px; border-radius:12px;">Acervo Estadual Catalogado</span>
+            </div>
+            <div class="ficha-seed-grid">
+                <div><strong style="color:#fff;">📌 ISBN-13:</strong> 978-85-7657-066-0</div>
+                <div><strong style="color:#fff;">🗂️ Classificação CDD:</strong> 813.54 (Ficção Científica)</div>
+                <div><strong style="color:#fff;">📍 Localização Física:</strong> Corredor A • Estante 01</div>
+                <div><strong style="color:#fff;">📄 Edição:</strong> 240 páginas • Editora Aleph</div>
+                <div><strong style="color:#fff;">🎯 Faixa Indicada:</strong> A partir de 13 anos</div>
+                <div><strong style="color:#fff;">⏱️ Tempo Médio:</strong> ~4h 30min de leitura</div>
+            </div>
+            <div class="ficha-curiosidade">
+                <strong style="color:#f1c40f;">💡 Curiosidade Histórica:</strong> Isaac Asimov se inspirou na obra <em>Declínio e Queda do Império Romano</em> para imaginar a queda do Império Galáctico e a criação da Enciclopédia Galáctica!
+            </div>
+            <div class="ficha-bncc">
+                <p style="margin:0 0 5px 0;"><strong style="color:#ffd700;">🎓 Alinhamento BNCC / Paraná:</strong> História, Matemática (Estatística) e Sociologia (EM13CHS102 / EM13MAT316)</p>
+                <p style="margin:0;"><strong style="color:#58a6ff;">🚀 Foco ENEM / UFPR:</strong> Repertório sobre preservação do conhecimento científico, estatística social e ciclos históricos.</p>
+            </div>
+        </div>
+
+        <p id="statusEstoqueLivro" style="font-size:15px; margin: 14px 0;">📦 Estoque Físico Local: <strong style="color:#00ff88;">4 exemplar(es) disponível(is)</strong></p>
+
+        <h3>Solicitar Retirada</h3>
+        <form id="formRetiradaLivro">
+            <label for="alunoNomeLivro">Nome Completo do Aluno:</label>
+            <input type="text" id="alunoNomeLivro" placeholder="Digite seu nome completo" required>
+            <label for="alunoTurmaLivro">Turma:</label>
+            <input type="text" id="alunoTurmaLivro" placeholder="Ex: 2º Técnico S" required>
+            <button type="submit" class="btn-confirmar">📚 Confirmar Empréstimo</button>
+        </form>
+
+        <div class="vitrine-relacionados">
+            <h4>✨ Quem leu "Fundação" também gostou:</h4>
+            <div class="grid-relacionados">
+                <a href="livro-eurobo.html" class="card-relacionado">
+                    <img src="../img/Eu robô.jpg" alt="Eu, Robô">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Eu, Robô</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Mesmo Autor • Ver ➔</span></div>
+                </a>
+                <a href="livro-duna.html" class="card-relacionado">
+                    <img src="../img/41MRn6hy8-L._SY445_SX342_ML2_.jpg" alt="Duna">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Duna</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Império Espacial • Ver ➔</span></div>
+                </a>
+                <a href="livro-mochileiro.html" class="card-relacionado">
+                    <img src="../img/81zQDb6GMVL._SY385_.jpg" alt="O Guia do Mochileiro">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">O Guia do Mochileiro</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Clássico Sci-Fi • Ver ➔</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao-comentarios">
+        <h3 style="color:#58a6ff; font-size:16px; text-transform:uppercase; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:8px;">Avaliações e Terminais de Opinião</h3>
+        <div id="listaComentarios">
+            <div class="comentario-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px;"><strong style="color:#58a6ff; font-size:14px;">👤 Fernanda Lima (2º Ano C)</strong><span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span></div>
+                <p style="color:#d0d7de; font-size:14px;">A ideia de prever o futuro usando matemática e estatística é genial! Leitura super fluida.</p>
+            </div>
+        </div>
+        <form id="formNovoComentario" style="margin-top:16px;">
+            <label for="notaComentarioLivro">Sua Nota:</label>
+            <select id="notaComentarioLivro">
+                <option value="5">★★★★★ - Excelente</option>
+                <option value="4">★★★★☆ - Muito Bom</option>
+                <option value="3">★★★☆☆ - Bom</option>
+                <option value="2">★★☆☆☆ - Regular</option>
+                <option value="1">★☆☆☆☆ - Ruim</option>
+            </select>
+            <textarea id="textoNovoComentario" rows="3" placeholder="Escreva sua opinião sobre a obra..." required></textarea>
+            <button type="submit" class="btn-publicar">Publicar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="../JS/temas.js"></script>
+    <script src="../JS/emprestimo.js"></script>
+</body>
+
+</html>

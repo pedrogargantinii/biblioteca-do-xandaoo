@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Guia do Mochileiro das Galáxias - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop id="videoFundo">
+        <source src="../img/espacio.mp4" type="video/mp4">
+    </video>
+
+    <header class="header-persistente">
+        <a href="../index.html">
+            <img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci">
+        </a>
+
+        <div class="menu-links">
+            <a href="../index.html">⬅ Voltar ao Catálogo</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-interno-livro">
+        <img src="../img/81zQDb6GMVL._SY385_.jpg" alt="O Guia do Mochileiro das Galáxias">
+
+        <h2>O Guia do Mochileiro das Galáxias</h2>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin: 12px 0 18px 0;">
+            <button type="button" id="btnAbrirDegustacaoDireta"
+                style="background:rgba(47,129,247,0.2); border:1px solid #2f81f7; color:#58a6ff; padding:8px 16px; border-radius:20px; font-size:12px; font-weight:bold; cursor:pointer;">📖
+                Ler Trecho (Modo Kindle)</button>
+            <button type="button" id="btnFavoritarDireto"
+                style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.25); color:#fff; padding:8px 16px; border-radius:20px; font-size:12px; font-weight:bold; cursor:pointer;">🤍
+                Favoritar Obra</button>
+            <button type="button" id="btnCompartilharDireto"
+                style="background:rgba(0,255,136,0.12); border:1px solid #00ff88; color:#00ff88; padding:8px 16px; border-radius:20px; font-size:12px; font-weight:bold; cursor:pointer;">🔗
+                Compartilhar Link</button>
+        </div>
+
+        <!-- Leitor Kindle Embutido (Abre diretamente aqui sem tela preta forçada) -->
+        <div id="gavetaLeitorKindle"
+            style="display:none; clear:both; margin: 16px 0 22px 0; background:#f4ecd8; color:#2c221e; border:2px solid #d4b483; border-radius:14px; padding:22px 26px; box-shadow:0 8px 25px rgba(0,0,0,0.45); transition:all 0.3s ease;">
+            <div
+                style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(0,0,0,0.12); padding-bottom:10px; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+                <strong style="font-size:13px; letter-spacing:0.5px;">📖 LEITOR DIGITAL • CAPÍTULO 1 (AMOSTRA
+                    GRATUITA)</strong>
+                <div style="display:flex; gap:6px;">
+                    <button type="button" id="btnKindleTemaPapel"
+                        style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:#e8dcc2; color:#2c221e; font-size:11px; font-weight:bold; cursor:pointer;">☀️
+                        Papel</button>
+                    <button type="button" id="btnKindleTemaEscuro"
+                        style="padding:4px 10px; border-radius:6px; border:1px solid #30363d; background:#161b22; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">🌙
+                        Noturno</button>
+                    <button type="button" id="btnKindleAumentarFonte"
+                        style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:transparent; color:inherit; font-size:11px; font-weight:bold; cursor:pointer;">A+</button>
+                    <button type="button" id="btnFecharGavetaKindle"
+                        style="padding:4px 10px; border-radius:6px; border:none; background:#da3633; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">Fechar
+                        ✖</button>
+                </div>
+            </div>
+            <p id="textoPaginaKindle"
+                style="font-family:'Georgia', serif !important; font-size:16px !important; line-height:1.8 !important; color:inherit !important; margin:0 !important;">
+                "Num ponto remoto dos confins não mapeados da extremidade oeste da Espiral da Galáxia, existe um pequeno
+                sol amarelo e esquecido. Orbitando este sol, a uma distância de aproximadamente cento e cinquenta
+                milhões de quilômetros, há um planetinha azul-esverdeado totalmente insignificante cujos habitantes
+                descendentes de macacos são tão extraordinariamente primitivos que ainda acham que relógios digitais são
+                uma grande ideia..."
+            </p>
+        </div>
+
+        <h3>Especificações do Terminal</h3>
+        <p><strong>Autor:</strong> Douglas Adams</p>
+        <p><strong>Gênero:</strong> Ficção Científica & Comédia Espacial</p>
+        <p><strong>Sinopse:</strong> Considerado um dos maiores clássicos da ficção científica mundial, a história
+            acompanha as aventuras espaciais de Arthur Dent e seu amigo alienígena Ford Prefect. Segundos antes da Terra
+            ser demolida para dar lugar a uma via expressa hiperespacial, os dois escapam pegando carona em uma nave
+            alienígena graças ao infalível Guia do Mochileiro das Galáxias.</p>
+
+        <div
+            style="clear:both; margin:22px 0; background:rgba(13,17,23,0.92); border:1px solid rgba(47,129,247,0.5); border-radius:16px; padding:20px 22px;">
+            <div
+                style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:10px; margin-bottom:14px; flex-wrap:wrap; gap:8px;">
+                <strong style="color:#58a6ff; font-size:15px;">🏛️ Ficha Catalográfica & Diretrizes SEED-PR</strong>
+                <span
+                    style="background:rgba(0,255,136,0.15); border:1px solid #00ff88; color:#00ff88; font-size:11px; font-weight:bold; padding:3px 10px; border-radius:12px;">Acervo
+                    Estadual Catalogado</span>
+            </div>
+
+            <div
+                style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:10px; font-size:13px; color:#c9d1d9;">
+                <div><strong style="color:#fff;">📌 ISBN-13:</strong> 978-85-8041-554-4</div>
+                <div><strong style="color:#fff;">🗂️ Classificação CDD:</strong> 823.914 (Ficção Britânica)</div>
+                <div><strong style="color:#fff;">📍 Localização Física:</strong> Corredor A • Estante 01</div>
+                <div><strong style="color:#fff;">📄 Edição:</strong> 208 páginas • Editora Arqueiro</div>
+                <div><strong style="color:#fff;">🎯 Faixa Indicada:</strong> A partir de 12 anos</div>
+                <div><strong style="color:#fff;">⏱️ Tempo Médio:</strong> ~4h 10min de leitura</div>
+            </div>
+
+            <div
+                style="margin-top:12px; background:rgba(241,196,15,0.1); border-left:3px solid #f1c40f; padding:10px 14px; border-radius:6px; font-size:13px; color:#e6edf3;">
+                <strong style="color:#f1c40f;">💡 Curiosidade Nerd:</strong> A famosa resposta <strong>"42"</strong>
+                para o sentido da vida, do universo e tudo mais tornou-se um dos maiores símbolos da programação e da
+                cultura geek mundial!
+            </div>
+
+            <div style="margin-top:12px; font-size:13px; color:#c9d1d9; line-height:1.5;">
+                <p style="margin:0 0 5px 0;"><strong style="color:#ffd700;">🎓 Alinhamento BNCC / Paraná:</strong>
+                    Língua Portuguesa, Filosofia e Inglês (EM13LGG101)</p>
+                <p style="margin:0;"><strong style="color:#58a6ff;">🚀 Foco ENEM / UFPR:</strong> Excelente repertório
+                    sobre sátira social, tecnologia e pensamento crítico para redações.</p>
+            </div>
+        </div>
+        <p id="statusEstoqueMochileiro" style="font-size:15px; margin: 14px 0;">📦 Estoque Físico Local: <strong
+                style="color:#00ff88;">4 exemplar(es) disponível(is)</strong></p>
+
+        <h3>Solicitar Retirada</h3>
+        <form id="formRetiradaMochileiro">
+            <label for="alunoNomeMochileiro">Nome Completo do Aluno:</label>
+            <input type="text" id="alunoNomeMochileiro" placeholder="Digite seu nome completo" required>
+
+            <label for="alunoTurmaMochileiro">Turma:</label>
+            <input type="text" id="alunoTurmaMochileiro" placeholder="Ex: 2º Técnico S" required>
+
+            <button type="submit" class="btn-confirmar" id="btnConfirmarMochileiro">📚 Confirmar Empréstimo</button>
+        </form>
+
+        <div style="clear:both; margin-top:32px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.14);">
+            <h4 style="color:#a371f7; font-size:18px; margin:0 0 18px 0;">✨ Quem leu "O Guia do Mochileiro das Galáxias"
+                também gostou:</h4>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:18px;">
+                <a href="livro-duna.html"
+                    style="background:rgba(22,27,34,0.92); border:1px solid #30363d; padding:18px; border-radius:16px; text-decoration:none; color:#fff; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; transition:all 0.25s ease; box-shadow:0 8px 20px rgba(0,0,0,0.5);"
+                    onmouseover="this.style.borderColor='#2f81f7'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+                    <img src="../img/41MRn6hy8-L._SY445_SX342_ML2_.jpg" alt="Duna"
+                        style="width:135px !important; height:195px !important; object-fit:cover !important; float:none !important; margin:0 !important; border-radius:10px !important; border:2px solid #2f81f7 !important; box-shadow:0 6px 16px rgba(0,0,0,0.8) !important;">
+                    <div>
+                        <strong style="font-size:16px; display:block; color:#ffffff; margin-bottom:4px;">Duna</strong>
+                        <span style="font-size:12px; color:#58a6ff; font-weight:bold;">Ficção Científica • Ver Obra
+                            ➔</span>
+                    </div>
+                </a>
+
+                <a href="livro-neuromancer.html"
+                    style="background:rgba(22,27,34,0.92); border:1px solid #30363d; padding:18px; border-radius:16px; text-decoration:none; color:#fff; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; transition:all 0.25s ease; box-shadow:0 8px 20px rgba(0,0,0,0.5);"
+                    onmouseover="this.style.borderColor='#2f81f7'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+                    <img src="../img/91Bx5ilP+EL._SY425_.jpg" alt="Neuromancer"
+                        style="width:135px !important; height:195px !important; object-fit:cover !important; float:none !important; margin:0 !important; border-radius:10px !important; border:2px solid #2f81f7 !important; box-shadow:0 6px 16px rgba(0,0,0,0.8) !important;">
+                    <div>
+                        <strong
+                            style="font-size:16px; display:block; color:#ffffff; margin-bottom:4px;">Neuromancer</strong>
+                        <span style="font-size:12px; color:#58a6ff; font-weight:bold;">Cyberpunk & IA • Ver Obra
+                            ➔</span>
+                    </div>
+                </a>
+
+                <a href="livro-fundacao.html"
+                    style="background:rgba(22,27,34,0.92); border:1px solid #30363d; padding:18px; border-radius:16px; text-decoration:none; color:#fff; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; transition:all 0.25s ease; box-shadow:0 8px 20px rgba(0,0,0,0.5);"
+                    onmouseover="this.style.borderColor='#2f81f7'; this.style.transform='translateY(-5px)'"
+                    onmouseout="this.style.borderColor='#30363d'; this.style.transform='translateY(0)'">
+                    <img src="../img/fe6e2c3516bd9f9f968ccae1a23de65a.png" alt="Fundação"
+                        style="width:135px !important; height:195px !important; object-fit:cover !important; float:none !important; margin:0 !important; border-radius:10px !important; border:2px solid #2f81f7 !important; box-shadow:0 6px 16px rgba(0,0,0,0.8) !important;">
+                    <div>
+                        <strong
+                            style="font-size:16px; display:block; color:#ffffff; margin-bottom:4px;">Fundação</strong>
+                        <span style="font-size:12px; color:#58a6ff; font-weight:bold;">Clássico Espacial • Ver Obra
+                            ➔</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="secao-comentarios">
+        <h3
+            style="color:#58a6ff; font-size:16px; text-transform:uppercase; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:8px;">
+            Avaliações e Terminais de Opinião</h3>
+
+        <div id="listaComentarios">
+            <div class="comentario-item"
+                style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <strong style="color:#58a6ff; font-size:14px;">👤 Lucas Mendes (3º Técnico)</strong>
+                    <span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span>
+                </div>
+                <p style="color:#d0d7de; font-size:14px; margin-bottom:8px;">Leitura obrigatória! Peguei emprestado na
+                    semana passada e devorei em dois dias. A conservação do exemplar da biblioteca está impecável.</p>
+                <div
+                    style="background:rgba(47,129,247,0.12); border-left:3px solid #2f81f7; padding:10px 14px; border-radius:6px; margin-top:8px;">
+                    <strong style="color:#58a6ff; font-size:12px; display:block; margin-bottom:3px;">↳ Prof.
+                        Darci:</strong>
+                    <span style="color:#c9d1d9; font-size:13px;">Fico muito feliz que tenha gostado, Lucas! Excelente
+                        indicação para a turma.</span>
+                </div>
+            </div>
+
+            <div class="comentario-item"
+                style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                    <strong style="color:#58a6ff; font-size:14px;">👤 Mariana Silva (2º Ano B)</strong>
+                    <span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span>
+                </div>
+                <p style="color:#d0d7de; font-size:14px;">Muito bom mesmo, me ajudou demais a entender o humor britânico
+                    e ainda me prendeu do começo ao fim.</p>
+            </div>
+        </div>
+
+        <form id="formNovoComentario" style="margin-top:16px;">
+            <label for="notaComentarioLivro">Sua Nota:</label>
+            <select id="notaComentarioLivro">
+                <option value="5">★★★★★ - Excelente</option>
+                <option value="4">★★★★☆ - Muito Bom</option>
+                <option value="3">★★★☆☆ - Bom</option>
+                <option value="2">★★☆☆☆ - Regular</option>
+                <option value="1">★☆☆☆☆ - Ruim</option>
+            </select>
+
+            <textarea id="textoNovoComentario" rows="3" placeholder="Escreva sua opinião sobre a obra..."
+                required></textarea>
+            <button type="submit" class="btn-publicar">Publicar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="../JS/temas.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tituloObra = "O Guia do Mochileiro das Galáxias";
+            const gavetaKindle = document.getElementById("gavetaLeitorKindle");
+            const textoKindle = document.getElementById("textoPaginaKindle");
+            const btnFav = document.getElementById("btnFavoritarDireto");
+            let tamanhoFonteKindle = 16;
+
+            let favs = JSON.parse(localStorage.getItem("favoritosBiblioteca")) || [];
+            if (favs.includes(tituloObra)) btnFav.textContent = "❤️ Salvo nos Favoritos";
+
+            document.addEventListener("click", function (e) {
+                if (e.target.id === "btnAbrirDegustacaoDireta") {
+                    gavetaKindle.style.display = gavetaKindle.style.display === "none" ? "block" : "none";
+                }
+                if (e.target.id === "btnFecharGavetaKindle") {
+                    gavetaKindle.style.display = "none";
+                }
+                if (e.target.id === "btnKindleTemaPapel") {
+                    gavetaKindle.style.background = "#f4ecd8";
+                    gavetaKindle.style.color = "#2c221e";
+                    gavetaKindle.style.borderColor = "#d4b483";
+                }
+                if (e.target.id === "btnKindleTemaEscuro") {
+                    gavetaKindle.style.background = "#0d1117";
+                    gavetaKindle.style.color = "#e6edf3";
+                    gavetaKindle.style.borderColor = "#2f81f7";
+                }
+                if (e.target.id === "btnKindleAumentarFonte") {
+                    tamanhoFonteKindle = tamanhoFonteKindle >= 22 ? 16 : tamanhoFonteKindle + 2;
+                    textoKindle.style.setProperty("font-size", tamanhoFonteKindle + "px", "important");
+                }
+                if (e.target.id === "btnFavoritarDireto") {
+                    favs = JSON.parse(localStorage.getItem("favoritosBiblioteca")) || [];
+                    if (favs.includes(tituloObra)) {
+                        favs = favs.filter(f => f !== tituloObra);
+                        btnFav.textContent = "🤍 Favoritar Obra";
+                    } else {
+                        favs.push(tituloObra);
+                        btnFav.textContent = "❤️ Salvo nos Favoritos";
+                    }
+                    localStorage.setItem("favoritosBiblioteca", JSON.stringify(favs));
+                }
+                if (e.target.id === "btnCompartilharDireto") {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        alert("🔗 Link copiado! Quando o site estiver online no GitHub, qualquer pessoa que clicar no link irá direto para este livro.");
+                    }).catch(() => {
+                        alert("🔗 Copie o endereço da barra do navegador: " + window.location.href);
+                    });
+                }
+            });
+
+            let estoqueGlobal = JSON.parse(localStorage.getItem("estoqueBiblioteca")) || {};
+            if (estoqueGlobal[tituloObra] === undefined) {
+                estoqueGlobal[tituloObra] = 4;
+                localStorage.setItem("estoqueBiblioteca", JSON.stringify(estoqueGlobal));
+            }
+
+            function atualizarEstoqueTela() {
+                const qtd = estoqueGlobal[tituloObra];
+                const statusEl = document.getElementById("statusEstoqueMochileiro");
+                statusEl.innerHTML = qtd > 0
+                    ? `📦 Estoque Físico Local: <strong style="color:#00ff88;">${qtd} exemplar(es) disponível(is)</strong>`
+                    : `📦 Estoque Físico Local: <strong style="color:#ff6b6b;">Esgotado no momento</strong>`;
+            }
+            atualizarEstoqueTela();
+
+            const userLogado = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+            if (userLogado && !userLogado.ehVisitante) {
+                document.getElementById("alunoNomeMochileiro").value = userLogado.nome;
+                if (userLogado.turma) document.getElementById("alunoTurmaMochileiro").value = userLogado.turma;
+            }
+
+            document.getElementById("formRetiradaMochileiro").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const user = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                if (!user || user.ehVisitante) {
+                    alert("🔒 Entre na sua Conta Oficial ou crie seu cadastro estudantil para retirar livros!");
+                    if (window.abrirPainelConta) window.abrirPainelConta();
+                    return;
+                }
+                if (estoqueGlobal[tituloObra] <= 0) {
+                    alert("⚠️ Exemplares esgotados no momento!");
+                    return;
+                }
+                const prazo = new Date(Date.now() + 14 * 86400000).toLocaleDateString("pt-BR");
+                estoqueGlobal[tituloObra] -= 1;
+                localStorage.setItem("estoqueBiblioteca", JSON.stringify(estoqueGlobal));
+
+                if (!user.emprestimos) user.emprestimos = [];
+                user.emprestimos.push({ livro: tituloObra, dataRetirada: new Date().toLocaleDateString("pt-BR"), dataDevolucao: prazo });
+                localStorage.setItem("usuarioRedeBiblioteca", JSON.stringify(user));
+
+                atualizarEstoqueTela();
+                alert(`🎉 EMPRÉSTIMO CONFIRMADO!\n\n📖 ${tituloObra}\n👤 ${user.nome}\n📅 Devolver até: ${prazo}`);
+            });
+
+            document.getElementById("formNovoComentario").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const user = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                const nomeAutor = (user && !user.ehVisitante) ? `${user.nome} (@${user.username})` : "Leitor Visitante";
+                const texto = document.getElementById("textoNovoComentario").value.trim();
+                const notaSel = document.getElementById("notaComentarioLivro");
+                const textoNota = notaSel.options[notaSel.selectedIndex].text;
+
+                if (!texto) return;
+
+                const novoDiv = document.createElement("div");
+                novoDiv.className = "comentario-item";
+                novoDiv.style.cssText = "margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);";
+                novoDiv.innerHTML = `
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                        <strong style="color:#00ff88; font-size:14px;">👤 ${nomeAutor}</strong>
+                        <span style="color:#ffd700; font-size:13px; font-weight:bold;">${textoNota}</span>
+                    </div>
+                    <p style="color:#d0d7de; font-size:14px;">${texto}</p>
+                `;
+                document.getElementById("listaComentarios").appendChild(novoDiv);
+                document.getElementById("textoNovoComentario").value = "";
+            });
+        });
+    </script>
+</body>
+
+</html>

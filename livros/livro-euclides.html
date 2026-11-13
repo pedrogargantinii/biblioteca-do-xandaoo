@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Os Elementos de Euclides - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+</head>
+
+<body>
+    <video autoplay muted loop id="videoFundo"><source src="../img/espacio.mp4" type="video/mp4"></video>
+
+    <header class="header-persistente">
+        <a href="../index.html"><img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci"></a>
+        <div class="menu-links">
+            <a href="../index.html">Catálogo</a>
+            <a href="../exatas_humanas.html">⬅ Voltar a Exatas</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-interno-livro">
+        <img src="../img/euclides.jpg" alt="Os Elementos de Euclides">
+        <h2>Os Elementos de Euclides</h2>
+
+        <div class="barra-acoes-obra">
+            <button type="button" id="btnAbrirDegustacaoDireta" class="btn-acao-kindle">📖 Ler Trecho (Modo Kindle)</button>
+            <button type="button" id="btnFavoritarDireto" class="btn-acao-fav">🤍 Favoritar Obra</button>
+            <button type="button" id="btnCompartilharDireto" class="btn-acao-share">🔗 Compartilhar Link</button>
+        </div>
+
+        <div id="gavetaLeitorKindle" class="gaveta-kindle">
+            <div class="gaveta-kindle-topo">
+                <strong style="font-size:13px;">📖 LEITOR DIGITAL • LIVRO I: DEFINIÇÕES E POSTULADOS</strong>
+                <div style="display:flex; gap:6px;">
+                    <button type="button" id="btnKindleTemaPapel" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:#e8dcc2; color:#2c221e; font-size:11px; font-weight:bold; cursor:pointer;">☀️ Papel</button>
+                    <button type="button" id="btnKindleTemaEscuro" style="padding:4px 10px; border-radius:6px; border:1px solid #30363d; background:#161b22; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">🌙 Noturno</button>
+                    <button type="button" id="btnKindleAumentarFonte" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:transparent; color:inherit; font-size:11px; font-weight:bold; cursor:pointer;">A+</button>
+                    <button type="button" id="btnFecharGavetaKindle" style="padding:4px 10px; border-radius:6px; border:none; background:#da3633; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">Fechar ✖</button>
+                </div>
+            </div>
+            <p id="textoPaginaKindle">"Definição 1: Ponto é aquilo de que nada é parte. Definição 2: Linha é comprimento sem largura. Definição 3: As extremidades de uma linha são pontos. Definição 4: Linha reta é a que está posta por igual com os pontos sobre si mesma. A partir de apenas cinco postulados simples, toda a arquitetura da geometria plana e espacial é demonstrada passo a passo..."</p>
+        </div>
+
+        <h3>Especificações do Terminal</h3>
+        <p><strong>Autor:</strong> Euclides de Alexandria</p>
+        <p><strong>Gênero:</strong> Geometria Plana, Espacial & Lógica Axiomática</p>
+        <p><strong>Sinopse:</strong> Escrito por volta de 300 a.C., <em>Os Elementos</em> reúne 13 livros que organizam todo o conhecimento geométrico e aritmético da Antiguidade em um sistema lógico rigoroso de definições, axiomas e demonstrações.</p>
+
+        <div class="ficha-seed-box">
+            <div class="ficha-seed-topo">
+                <strong style="color:#58a6ff; font-size:15px;">🏛️ Ficha Catalográfica & Diretrizes SEED-PR</strong>
+                <span style="background:rgba(0,255,136,0.15); border:1px solid #00ff88; color:#00ff88; font-size:11px; font-weight:bold; padding:3px 10px; border-radius:12px;">Acervo Estadual Catalogado</span>
+            </div>
+            <div class="ficha-seed-grid">
+                <div><strong style="color:#fff;">📌 ISBN-13:</strong> 978-85-7139-935-8</div>
+                <div><strong style="color:#fff;">🗂️ Classificação CDD:</strong> 516.2 (Geometria Euclidiana)</div>
+                <div><strong style="color:#fff;">📍 Localização Física:</strong> Corredor C • Estante 04</div>
+                <div><strong style="color:#fff;">📄 Edição:</strong> 600 páginas • Editora UNESP</div>
+                <div><strong style="color:#fff;">🎯 Faixa Indicada:</strong> A partir de 14 anos</div>
+                <div><strong style="color:#fff;">⏱️ Tempo Médio:</strong> ~9h 50min de leitura</div>
+            </div>
+            <div class="ficha-curiosidade">
+                <strong style="color:#f1c40f;">💡 Curiosidade Histórica:</strong> <em>Os Elementos</em> é o livro didático mais editado e estudado da história da humanidade, tendo servido como base para o ensino de matemática durante mais de <strong>dois mil anos</strong>!
+            </div>
+            <div class="ficha-bncc">
+                <p style="margin:0 0 5px 0;"><strong style="color:#ffd700;">🎓 Alinhamento BNCC / Paraná:</strong> Matemática (Geometria Plana, Espacial, Triângulos, Teorema de Pitágoras e Demonstrações) (EM13MAT307)</p>
+                <p style="margin:0;"><strong style="color:#58a6ff;">🚀 Foco ENEM / UFPR:</strong> Fundamento direto para questões de Geometria Plana e Espacial no ENEM, OBMEP e Vestibular UFPR.</p>
+            </div>
+        </div>
+
+        <p id="statusEstoqueLivro" style="font-size:15px; margin: 14px 0;">📦 Estoque Físico Local: <strong style="color:#00ff88;">4 exemplar(es) disponível(is)</strong></p>
+
+        <h3>Solicitar Retirada</h3>
+        <form id="formRetiradaLivro">
+            <label for="alunoNomeLivro">Nome Completo do Aluno:</label>
+            <input type="text" id="alunoNomeLivro" placeholder="Digite seu nome completo" required>
+            <label for="alunoTurmaLivro">Turma:</label>
+            <input type="text" id="alunoTurmaLivro" placeholder="Ex: 2º Técnico S" required>
+            <button type="submit" class="btn-confirmar">📚 Confirmar Empréstimo</button>
+        </form>
+
+        <div class="vitrine-relacionados">
+            <h4>✨ Quem leu "Os Elementos de Euclides" também gostou:</h4>
+            <div class="grid-relacionados">
+                <a href="livro-fermat.html" class="card-relacionado">
+                    <img src="../img/OIP (1).webp" alt="O Último Teorema de Fermat">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Teorema de Fermat</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Matemática Clássica • Ver ➔</span></div>
+                </a>
+                <a href="livro-algarismos.html" class="card-relacionado">
+                    <img src="../img/algarismos.jpg" alt="Algarismos: A História dos Números">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">História dos Números</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Antiguidade • Ver ➔</span></div>
+                </a>
+                <a href="livro-calculava.html" class="card-relacionado">
+                    <img src="../img/OIP (1).jpg" alt="O Homem que Calculava">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">O Homem que Calculava</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Geometria & Lógica • Ver ➔</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao-comentarios">
+        <h3 style="color:#58a6ff; font-size:16px; text-transform:uppercase; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:8px;">Avaliações e Terminais de Opinião</h3>
+        <div id="listaComentarios">
+            <div class="comentario-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px;"><strong style="color:#58a6ff; font-size:14px;">👤 Gabriel Souza (3º Ano A)</strong><span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span></div>
+                <p style="color:#d0d7de; font-size:14px;">Ver como Euclides provou o Teorema de Pitágoras apenas desenhando quadrados e triângulos é sensacional!</p>
+            </div>
+        </div>
+        <form id="formNovoComentario" style="margin-top:16px;">
+            <label for="notaComentarioLivro">Sua Nota:</label>
+            <select id="notaComentarioLivro">
+                <option value="5">★★★★★ - Excelente</option>
+                <option value="4">★★★★☆ - Muito Bom</option>
+                <option value="3">★★★☆☆ - Bom</option>
+                <option value="2">★★☆☆☆ - Regular</option>
+                <option value="1">★☆☆☆☆ - Ruim</option>
+            </select>
+            <textarea id="textoNovoComentario" rows="3" placeholder="Escreva sua opinião sobre a obra..." required></textarea>
+            <button type="submit" class="btn-publicar">Publicar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="../JS/temas.js"></script>
+    <script src="../JS/emprestimo.js"></script>
+</body>
+
+</html>

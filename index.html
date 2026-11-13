@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca do Xandão - Página 1</title>
+    <link rel="stylesheet" href="CSS/global.css">
+    <link rel="stylesheet" href="CSS/catalogo.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+<body>
+
+    <video autoplay muted loop id="videoFundo">
+        <source src="img/espacio.mp4" type="video/mp4">
+    </video>
+
+    <header class="header-persistente">
+        <a href="index.html">
+            <img src="img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci">
+        </a>
+
+        <div class="menu-links">
+            <a href="index.html" style="color: #fff; border-bottom: 2px solid #2f81f7;">Ficção & Ciências</a>
+            <a href="exatas_humanas.html">Matemática & História</a>
+            <a href="gibis.html">Gibis</a>
+            <a href="cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta do Google conectada"></div>
+
+            <select id="seletorTema"
+                style="background: rgba(22, 27, 34, 0.8); border: 1px solid #30363d; color: #f0f6fc; padding: 6px 12px; margin-left: 10px; font-size: 13px; border-radius: 6px; cursor: pointer; outline: none;">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-busca">
+        <input type="text" id="campoBusca" class="input-busca" placeholder="🪐 Pesquisar no acervo da biblioteca...">
+    </div>
+
+    <section>
+        <h2>Ficção Científica</h2>
+        <div class="grade-livros">
+
+            <div class="bloco-livro">
+                <a href="livros/livro-mochileiro.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/81zQDb6GMVL._SY385_.jpg" alt="Livro 1">
+                    <h4>O Guia do Mochileiro das Galáxias</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-duna.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/41MRn6hy8-L._SY445_SX342_ML2_.jpg" alt="Livro 2">
+                    <h4>Duna</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-neuromancer.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/91Bx5ilP+EL._SY425_.jpg" alt="Livro 3">
+                    <h4>Neuromancer</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-fundacao.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/fe6e2c3516bd9f9f968ccae1a23de65a.png" alt="Livro 4">
+                    <h4>Fundação</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-1984.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/51oiPQONvoL._SY445_SX342_ML2_.jpg" alt="Livro 5">
+                    <h4>1984</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-mundo-novo.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/61hOp6UFvCL._SY425_.jpg" alt="Livro 6">
+                    <h4>Admirável Mundo Novo</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-fahrenheit.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/fahrenheit.jpg" alt="Livro 31">
+                    <h4>Fahrenheit 451</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-eurobo.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/Eu robô.jpg" alt="Livro 32">
+                    <h4>Eu, Robô</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+            <div class="bloco-livro">
+                <a href="livros/livro-frankenstein.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/frankestein.jpg" alt="Livro 33">
+                    <h4>Frankenstein</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Ciências</h2>
+        <div class="grade-livros">
+
+            <div class="bloco-livro">
+                <a href="livros/livro-cosmos.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/71zVhbnKmfL._SY385_.jpg" alt="Livro 7">
+                    <h4>Cosmos</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-tempo.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/R.jpg" alt="Livro 8">
+                    <h4>Uma Breve História do Tempo</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-especies.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/81jUxguTROL._SY342_.jpg" alt="Livro 9">
+                    <h4>A Origem das Espécies</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-gene.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/41tsefNo1UL._SY445_SX342_ML2_.jpg" alt="Livro 10">
+                    <h4>O Gene</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-bilionarios.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/OIP.jpg" alt="Livro 11">
+                    <h4>Bilionários por Acaso</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-capataz.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/OIP3132131.webp" alt="Livro 12">
+                    <h4>O Capataz da Ciência</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+            <div class="bloco-livro">
+                <a href="livros/livro-casca-noz.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/capa-casca-noz.jpg" alt="Livro 53">
+                    <h4>O Universo numa Casca de Noz</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-demonios.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/capa-demonios.jpg" alt="Livro 54">
+                    <h4>O Mundo Assombrado pelos Demônios</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+            <div class="bloco-livro">
+                <a href="livros/livro-armas-germes.html" style="text-decoration: none; color: inherit;">
+                    <img src="img/capa-armas-germes.jpg" alt="Livro 55">
+                    <h4>Armas, Germes e Aço</h4>
+                    <p>Disponíveis: Carregando...</p>
+                    <button class="botao-detalhes" type="button">Saber mais informações</button>
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div class="secao-paginacao">
+        <a href="index.html" class="btn-navegacao-pag pagina-atual">1</a>
+        <a href="exatas_humanas.html" class="btn-navegacao-pag">2</a>
+        <a href="gibis.html" class="btn-navegacao-pag">3</a>
+    </div>
+
+    <footer class="rodape-institucional">
+        <div class="rodape-conteudo">
+            <div class="rodape-bloco">
+                <h5>Instituição</h5>
+                <p>Biblioteca Central Escolar</p>
+                <p>Ensino Técnico em Desenvolvimento de Sistemas</p>
+            </div>
+            <div class="rodape-bloco">
+                <h5>Contatos / Suporte</h5>
+                <p>E-mail: suporte.biblioteca@escola.edu.br</p>
+                <p>Telefone: (41) 3333-4444</p>
+            </div>
+            <div class="rodape-bloco">
+                <h5>Termos e Permissões</h5>
+                <p>Acesso restrito a alunos e servidores cadastrados.</p>
+                <p>© 2026 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/temas.js"></script>
+    <script src="JS/busca.js"></script>
+    <script src="JS/estoque.js"></script>
+    <script src="JS/bibliotecario.js"></script>
+
+</body>
+
+</html>

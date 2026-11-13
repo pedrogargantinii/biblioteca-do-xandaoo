@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votação do Acervo - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="CSS/global.css">
+    <style>
+        body {
+            padding-top: 130px !important;
+            overflow-x: hidden;
+        }
+
+        .hero-votacao {
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            padding: 28px;
+            background: rgba(13, 17, 23, 0.55);
+            border: 1px solid rgba(47, 129, 247, 0.45);
+            backdrop-filter: blur(8px);
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-votacao h1 {
+            color: #ffffff;
+            font-size: 28px;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+        }
+
+        .hero-votacao p {
+            color: #c9d1d9;
+            font-size: 15px;
+            max-width: 750px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        .badge-escola {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.12);
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .lista-ranking-votacao {
+            max-width: 1100px;
+            margin: 0 auto 35px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            padding: 0 20px;
+        }
+
+        .card-voto-livro {
+            background: rgba(13, 17, 23, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            transition: all 0.25s ease;
+        }
+
+        .card-voto-livro:hover {
+            border-color: #2f81f7;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(47, 129, 247, 0.3);
+        }
+
+        .posicao-ranking {
+            font-size: 26px;
+            font-weight: 900;
+            color: #ffd700;
+            width: 42px;
+            text-align: center;
+            flex-shrink: 0;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+        }
+
+        .capa-voto {
+            width: 95px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+            flex-shrink: 0;
+        }
+
+        .info-voto {
+            flex: 1;
+            min-width: 240px;
+        }
+
+        .info-voto h3 {
+            color: #ffffff;
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
+
+        .info-voto .autor-tag {
+            color: #58a6ff;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .info-voto p {
+            color: #c9d1d9;
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .barra-progresso-fundo {
+            width: 100%;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 6px;
+        }
+
+        .barra-progresso-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #2f81f7, #00ff88);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        .acoes-voto {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            min-width: 190px;
+        }
+
+        .btn-votar-agora {
+            background: #238636;
+            color: #ffffff;
+            border: 1px solid #2ea043;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-votar-agora:hover {
+            background: #2ea043;
+            transform: scale(1.03);
+        }
+
+        .btn-votar-agora.ja-votado {
+            background: #1f6feb;
+            border-color: #58a6ff;
+        }
+
+        .btn-ver-comentarios-voto {
+            background: rgba(33, 38, 45, 0.85);
+            color: #e6edf3;
+            border: 1px solid #30363d;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-ver-comentarios-voto:hover {
+            border-color: #a371f7;
+            color: #ffffff;
+        }
+
+        .caixa-sugestao-nova {
+            max-width: 1060px;
+            margin: 0 auto 50px auto;
+            padding: 28px;
+            background: rgba(13, 17, 23, 0.68);
+            border: 1px solid rgba(163, 113, 247, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+        }
+
+        .caixa-sugestao-nova h2 {
+            color: #d2a8ff;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .grid-form-sugestao {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+            margin-top: 16px;
+        }
+
+        .grid-form-sugestao input {
+            padding: 12px;
+            background: rgba(22, 27, 34, 0.9);
+            border: 1px solid #30363d;
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        .btn-enviar-sugestao {
+            background: linear-gradient(135deg, #2f81f7, #8957e5);
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="videoFundo">
+        <source src="img/espacio.mp4" type="video/mp4">
+    </video>
+
+    <header class="header-persistente">
+        <a href="index.html">
+            <img src="img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci">
+        </a>
+
+        <div class="menu-links">
+            <a href="votacao.html" style="color: #00ff88; border-color: #00ff88;">🗳️ Votação</a>
+            <span class="divisor-menu-futurista"
+                style="display:inline-block; width:2px; height:26px; background:linear-gradient(180deg, transparent, #a371f7, #2f81f7, transparent); margin:0 4px; box-shadow:0 0 8px #a371f7;"></span>
+            <a href="index.html">Ficção & Ciências</a>
+            <a href="exatas_humanas.html">Matemática & História</a>
+            <a href="gibis.html">Gibis</a>
+            <a href="cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="hero-votacao">
+        <span class="badge-escola">🏫 Colégio Estadual Humberto de Alencar Castelo Branco • Pinhais - PR</span>
+        <h1>🗳️ Escolha os Próximos Livros da Nossa Biblioteca!</h1>
+        <p>Mais de <strong>1.748 votos</strong> computados entre as turmas da manhã, tarde e noite. Vote nos seus
+            favoritos, leia o que os outros alunos estão comentando ou sugira uma nova obra para entrar na disputa!</p>
+    </div>
+
+    <div class="lista-ranking-votacao" id="containerRankingVotacao"></div>
+
+    <div class="caixa-sugestao-nova">
+        <h2>💡 Sugerir um Novo Livro para a Votação</h2>
+        <p style="color: #8b949e; font-size: 14px;">Sentiu falta de algum mangá, romance, livro de programação ou
+            ficção? Mande sua sugestão para entrar na próxima enquete da escola:</p>
+        <form id="formSugerirLivro">
+            <div class="grid-form-sugestao">
+                <input type="text" id="sugTituloLivro" placeholder="Nome do Livro (Ex: Percy Jackson)" required>
+                <input type="text" id="sugAutorLivro" placeholder="Autor (Ex: Rick Riordan)" required>
+                <input type="text" id="sugMotivoLivro" placeholder="Por que a escola deve comprar este livro?" required>
+            </div>
+            <button type="submit" class="btn-enviar-sugestao">🚀 Enviar Sugestão para o Acervo</button>
+        </form>
+        <div id="listaSugestoesRecentes" style="margin-top: 20px;"></div>
+    </div>
+
+    <div id="modalComentariosVotacao"
+        style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); backdrop-filter:blur(8px); z-index:9999999; justify-content:center; align-items:center; padding:20px;">
+        <div
+            style="background:#0d1117; border:1px solid #2f81f7; border-radius:16px; padding:26px; max-width:650px; width:100%; max-height:85vh; display:flex; flex-direction:column; color:#fff; position:relative;">
+            <button id="fecharModalComentVoto"
+                style="position:absolute; top:16px; right:18px; background:none; border:none; color:#8b949e; font-size:22px; cursor:pointer;">✖</button>
+            <h3 id="tituloLivroModalComent" style="color:#58a6ff; font-size:20px; margin-bottom:4px;"></h3>
+            <span id="autorLivroModalComent"
+                style="color:#8b949e; font-size:13px; margin-bottom:14px; display:block;"></span>
+
+            <div id="listaComentariosVotacaoRender"
+                style="flex:1; overflow-y:auto; padding-right:8px; margin-bottom:16px; display:flex; flex-direction:column; gap:10px;">
+            </div>
+
+            <form id="formNovoComentarioVotacao"
+                style="display:flex; gap:10px; border-top:1px solid #30363d; padding-top:14px;">
+                <input type="text" id="inputComentarioVoto"
+                    placeholder="Escreva por que você quer este livro na escola..."
+                    style="flex:1; padding:10px 14px; background:#161b22; border:1px solid #30363d; color:#fff; border-radius:8px; font-size:13px;"
+                    required>
+                <button type="submit"
+                    style="background:#238636; color:#fff; border:none; padding:10px 18px; border-radius:8px; font-weight:bold; cursor:pointer;">Comentar</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="rodape-institucional">
+        <div class="rodape-conteudo">
+            <div class="rodape-bloco">
+                <h5>Instituição</h5>
+                <p>Colégio Estadual Humberto de Alencar Castelo Branco</p>
+                <p>Ensino Técnico em Desenvolvimento de Sistemas</p>
+            </div>
+            <div class="rodape-bloco">
+                <h5>Contatos / Suporte</h5>
+                <p>E-mail: suporte.biblioteca@escola.edu.br</p>
+                <p>Pinhais - Paraná</p>
+            </div>
+            <div class="rodape-bloco">
+                <h5>Feira de Ciências 2026</h5>
+                <p>Plataforma Unificada de Acervo Escolar.</p>
+                <p>© 2026 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="JS/bibliotecario.js"></script>
+    <script src="JS/temas.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const listaTurmas = [
+                "1º Ano A (Manhã)", "1º Ano B (Manhã)", "1º Técnico S (Manhã)",
+                "2º Ano A (Manhã)", "2º Técnico S (Manhã)", "2º Ano C (Tarde)",
+                "3º Ano A (Manhã)", "3º Técnico S (Manhã)", "3º Ano B (Noite)", "2º Ano D (Noite)"
+            ];
+
+            const nomesAlunos = [
+                "Gabriel Henrique", "Ana Clara Souza", "Matheus Oliveira", "Beatriz Lima", "Lucas Fernandes",
+                "Mariana Costa", "João Vitor Santos", "Larissa Mendes", "Rafael Almeida", "Camila Rocha",
+                "Gustavo Pereira", "Juliana Ribeiro", "Felipe Martins", "Amanda Carvalho", "Bruno Silva",
+                "Letícia Gomes", "Thiago Barbosa", "Isabela Dias", "Leonardo Castro", "Yasmin Araújo"
+            ];
+
+            function gerarComentariosTurmas(frasesBase) {
+                const resultado = [];
+                for (let i = 0; i < 20; i++) {
+                    const nome = nomesAlunos[i % nomesAlunos.length];
+                    const turma = listaTurmas[i % listaTurmas.length];
+                    const texto = frasesBase[i % frasesBase.length];
+                    resultado.push({ autor: `${nome} • ${turma}`, texto: texto });
+                }
+                return resultado;
+            }
+
+            const livrosIniciaisVotacao = [
+                {
+                    id: "voto1",
+                    titulo: "Percy Jackson e o Ladrão de Raios",
+                    autor: "Rick Riordan",
+                    capa: "img/voto-percy.jpg",
+                    sinopse: "A saga mitológica mais pedida pelos alunos do 1º e 2º ano! Uma aventura eletrizante sobre semideuses modernos.",
+                    votos: 412,
+                    votado: false,
+                    comentarios: gerarComentariosTurmas([
+                        "Esse livro precisa entrar na biblioteca urgente! Todo mundo da sala quer ler.",
+                        "Li o primeiro capítulo emprestado e viciei, muito melhor que o filme!",
+                        "Perfeito para ler no intervalo, leitura super rápida e divertida.",
+                        "A biblioteca vai ficar lotada se trouxerem a coleção inteira de Percy Jackson!"
+                    ])
+                },
+                {
+                    id: "voto2",
+                    titulo: "Harry Potter e a Pedra Filosofal",
+                    autor: "J.K. Rowling",
+                    capa: "img/voto-potter.jpg",
+                    sinopse: "O clássico absoluto da fantasia que marcou gerações. Essencial para a seção de literatura juvenil da escola.",
+                    votos: 387,
+                    votado: false,
+                    comentarios: gerarComentariosTurmas([
+                        "Inacreditável ainda não ter Harry Potter no acervo, meu voto já está garantido!",
+                        "Combina demais com o tema de Hogwarts aqui do site!",
+                        "Quero muito reler a saga inteira antes de terminar o ensino médio.",
+                        "Toda turma da tarde está votando nesse aqui, vai ganhar fácil!"
+                    ])
+                },
+                {
+                    id: "voto3",
+                    titulo: "Código Limpo (Clean Code)",
+                    autor: "Robert C. Martin",
+                    capa: "img/voto-cleancode.jpg",
+                    sinopse: "O manual definitivo para os alunos do curso Técnico em Desenvolvimento de Sistemas escreverem códigos profissionais.",
+                    votos: 354,
+                    votado: false,
+                    comentarios: gerarComentariosTurmas([
+                        "Para nós do Técnico em Desenvolvimento de Sistemas esse livro é ouro puro!",
+                        "Vai ajudar demais nos projetos de TCC e nas aulas de programação.",
+                        "Os professores sempre recomendam esse livro, seria incrível ter na escola.",
+                        "Votado! Todo aluno de TI precisa ler esse clássico."
+                    ])
+                },
+                {
+                    id: "voto4",
+                    titulo: "O Pequeno Príncipe",
+                    autor: "Antoine de Saint-Exupéry",
+                    capa: "img/voto-pequenoprincipe.jpg",
+                    sinopse: "Uma obra poética e filosófica sobre amizade, amor e o que realmente importa na vida.",
+                    votos: 319,
+                    votado: false,
+                    comentarios: gerarComentariosTurmas([
+                        "Livro curto, lindo e cheio de reflexões incríveis para qualquer idade.",
+                        "Ótimo para trabalhos de literatura e filosofia.",
+                        "Todo mundo deveria ler pelo menos uma vez na vida.",
+                        "Meu voto vai para esse clássico, nunca perde a magia!"
+                    ])
+                },
+                {
+                    id: "voto5",
+                    titulo: "Homem-Aranha: A Última Caçada de Kraven",
+                    autor: "J.M. DeMatteis",
+                    capa: "img/voto-aranha.jpg",
+                    sinopse: "Uma das histórias mais sombrias e aclamadas dos quadrinhos para turbinar nossa seção de Gibis.",
+                    votos: 276,
+                    votado: false,
+                    comentarios: gerarComentariosTurmas([
+                        "A seção de gibis ficou muito top, com essa HQ vai ficar lendária!",
+                        "Melhor história do Homem-Aranha já escrita!",
+                        "Galera do fundão inteira votou nessa HQ hoje.",
+                        "Precisamos de mais graphic novels clássicas assim na biblioteca."
+                    ])
+                }
+            ];
+            let dadosVotacao = JSON.parse(localStorage.getItem("dadosVotacaoEscola_v2")) || livrosIniciaisVotacao;
+            let livroModalAtualIndex = null;
+
+            const containerRanking = document.getElementById("containerRankingVotacao");
+
+            function renderizarRanking() {
+                dadosVotacao.sort((a, b) => b.votos - a.votos);
+                const maiorVoto = dadosVotacao.votos;
+                containerRanking.innerHTML = "";
+
+                dadosVotacao.forEach((livro, index) => {
+                    const porcentagem = Math.round((livro.votos / (maiorVoto + 50)) * 100);
+                    const classeBotao = livro.votado ? "btn-votar-agora ja-votado" : "btn-votar-agora";
+                    const textoBotao = livro.votado ? `✅ Votado (${livro.votos})` : `🔥 Votar (${livro.votos} votos)`;
+
+                    const card = document.createElement("div");
+                    card.className = "card-voto-livro";
+                    card.innerHTML = `
+                        <div class="posicao-ranking">#${index + 1}</div>
+                        <img src="${livro.capa}" alt="${livro.titulo}" class="capa-voto" onerror="this.src='img/logo professor.png'">
+                        <div class="info-voto">
+                            <h3>${livro.titulo}</h3>
+                            <span class="autor-tag">✍️ ${livro.autor}</span>
+                            <p>${livro.sinopse}</p>
+                            <div class="barra-progresso-fundo">
+                                <div class="barra-progresso-fill" style="width: ${porcentagem}%;"></div>
+                            </div>
+                            <span style="font-size: 12px; color: #00ff88; font-weight: bold;">📊 ${livro.votos} alunos já votaram nesta obra</span>
+                        </div>
+                        <div class="acoes-voto">
+                            <button type="button" class="${classeBotao}" data-index="${index}">${textoBotao}</button>
+                            <button type="button" class="btn-ver-comentarios-voto" data-index="${index}">💬 Opiniões (${livro.comentarios.length})</button>
+                        </div>
+                    `;
+                    containerRanking.appendChild(card);
+                });
+
+                document.querySelectorAll(".btn-votar-agora").forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        const user = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                        if (!user || user.ehVisitante) {
+                            alert("🔒 Crie ou entre na sua Conta Oficial para registrar seu voto!");
+                            if (window.abrirPainelConta) window.abrirPainelConta();
+                            return;
+                        }
+                        const idx = this.getAttribute("data-index");
+                        if (dadosVotacao[idx].votado) {
+                            dadosVotacao[idx].votos -= 1;
+                            dadosVotacao[idx].votado = false;
+                        } else {
+                            dadosVotacao[idx].votos += 1;
+                            dadosVotacao[idx].votado = true;
+                        }
+                        localStorage.setItem("dadosVotacaoEscola_v2", JSON.stringify(dadosVotacao));
+                        renderizarRanking();
+                    });
+                });
+
+                document.querySelectorAll(".btn-ver-comentarios-voto").forEach(btn => {
+                    btn.addEventListener("click", function () {
+                        livroModalAtualIndex = this.getAttribute("data-index");
+                        abrirModalComentariosVoto(livroModalAtualIndex);
+                    });
+                });
+            }
+
+            const modalComent = document.getElementById("modalComentariosVotacao");
+            const listaComentRender = document.getElementById("listaComentariosVotacaoRender");
+
+            function abrirModalComentariosVoto(idx) {
+                const livro = dadosVotacao[idx];
+                document.getElementById("tituloLivroModalComent").textContent = `💬 Por que querem "${livro.titulo}"?`;
+                document.getElementById("autorLivroModalComent").textContent = `✍️ ${livro.autor} • ${livro.comentarios.length} opiniões de alunos`;
+
+                listaComentRender.innerHTML = livro.comentarios.map(c => `
+                    <div style="background:#161b22; border-left:3px solid #2f81f7; padding:10px 14px; border-radius:8px;">
+                        <strong style="color:#58a6ff; font-size:12px; display:block; margin-bottom:4px;">👤 ${c.autor}</strong>
+                        <p style="color:#e6edf3; font-size:13px; margin:0;">${c.texto}</p>
+                    </div>
+                `).join("");
+
+                modalComent.style.display = "flex";
+            }
+
+            document.getElementById("fecharModalComentVoto").addEventListener("click", () => {
+                modalComent.style.display = "none";
+            });
+
+            document.getElementById("formNovoComentarioVotacao").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const user = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                if (!user || user.ehVisitante) {
+                    alert("🔒 Entre na sua Conta Oficial para comentar na votação!");
+                    if (window.abrirPainelConta) window.abrirPainelConta();
+                    return;
+                }
+                const input = document.getElementById("inputComentarioVoto");
+                const texto = input.value.trim();
+                if (texto !== "" && livroModalAtualIndex !== null) {
+                    dadosVotacao[livroModalAtualIndex].comentarios.unshift({
+                        autor: `${user.nome} (@${user.username})`,
+                        texto: texto
+                    });
+                    localStorage.setItem("dadosVotacaoEscola_v2", JSON.stringify(dadosVotacao));
+                    input.value = "";
+                    abrirModalComentariosVoto(livroModalAtualIndex);
+                    renderizarRanking();
+                }
+            });
+
+            const formSugestao = document.getElementById("formSugerirLivro");
+            const listaSugestoesDiv = document.getElementById("listaSugestoesRecentes");
+            let sugestoesAlunos = JSON.parse(localStorage.getItem("sugestoesMuralEscola")) || [
+                { titulo: "Diário de um Banana", autor: "Jeff Kinney", motivo: "Muito divertido para leitura rápida nos intervalos!", aluno: "Lucas M. • 1º Ano B" },
+                { titulo: "Entendendo Algoritmos", autor: "Aditya Bhargava", motivo: "Ajuda demais quem está aprendendo lógica de programação.", aluno: "Mariana S. • 2º Técnico S" }
+            ];
+
+            function renderizarSugestoes() {
+                listaSugestoesDiv.innerHTML = `<h4 style="color:#00ff88; font-size:14px; margin-bottom:10px;">📌 Sugestões Enviadas pelos Alunos (${sugestoesAlunos.length}):</h4>` +
+                    sugestoesAlunos.map(s => `
+                        <div style="background:rgba(22,27,34,0.85); border:1px solid #30363d; padding:12px 16px; border-radius:10px; margin-bottom:10px;">
+                            <strong style="color:#ffffff; font-size:15px;">📖 ${s.titulo}</strong> <span style="color:#58a6ff; font-size:13px;">(${s.autor})</span>
+                            <p style="color:#c9d1d9; font-size:13px; margin:6px 0;">"${s.motivo}"</p>
+                            <span style="color:#8b949e; font-size:11px;">Sugerido por: ${s.aluno}</span>
+                        </div>
+                    `).join("");
+            }
+
+            formSugestao.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const user = JSON.parse(localStorage.getItem("usuarioRedeBiblioteca"));
+                if (!user || user.ehVisitante) {
+                    alert("🔒 Crie ou entre na sua Conta Oficial para sugerir livros!");
+                    if (window.abrirPainelConta) window.abrirPainelConta();
+                    return;
+                }
+                const titulo = document.getElementById("sugTituloLivro").value.trim();
+                const autor = document.getElementById("sugAutorLivro").value.trim();
+                const motivo = document.getElementById("sugMotivoLivro").value.trim();
+
+                sugestoesAlunos.unshift({
+                    titulo: titulo,
+                    autor: autor,
+                    motivo: motivo,
+                    aluno: `${user.nome} (@${user.username})`
+                });
+                localStorage.setItem("sugestoesMuralEscola", JSON.stringify(sugestoesAlunos));
+                formSugestao.reset();
+                renderizarSugestoes();
+                alert("✅ Sua sugestão foi publicada no mural da escola!");
+            });
+
+            renderizarRanking();
+            renderizarSugestoes();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{
+  "name": "Biblioteca do Xandão",
+  "short_name": "BiblioXandão",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d1117",
+  "theme_color": "#2f81f7",
+  "icons": [
+    {
+      "src": "img/logo professor.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

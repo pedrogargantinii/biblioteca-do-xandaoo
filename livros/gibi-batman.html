@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batman: O Cavaleiro das Trevas - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+</head>
+
+<body>
+    <video autoplay muted loop id="videoFundo"><source src="../img/espacio.mp4" type="video/mp4"></video>
+
+    <header class="header-persistente">
+        <a href="../index.html"><img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci"></a>
+        <div class="menu-links">
+            <a href="../index.html">Catálogo</a>
+            <a href="../gibis.html">⬅ Voltar a Gibis</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-interno-livro">
+        <img src="../img/batman%20cavaleiro%20das%20trevas.jpg" alt="Batman: O Cavaleiro das Trevas">
+        <h2>Batman: O Cavaleiro das Trevas</h2>
+
+        <div class="barra-acoes-obra">
+            <button type="button" id="btnAbrirDegustacaoDireta" class="btn-acao-kindle">📖 Ler Trecho (Modo Kindle)</button>
+            <button type="button" id="btnFavoritarDireto" class="btn-acao-fav">🤍 Favoritar Obra</button>
+            <button type="button" id="btnCompartilharDireto" class="btn-acao-share">🔗 Compartilhar Link</button>
+        </div>
+
+        <div id="gavetaLeitorKindle" class="gaveta-kindle">
+            <div class="gaveta-kindle-topo">
+                <strong style="font-size:13px;">📖 LEITOR DIGITAL • LIVRO 1: O RETORNO A GOTHAM (AMOSTRA)</strong>
+                <div style="display:flex; gap:6px;">
+                    <button type="button" id="btnKindleTemaPapel" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:#e8dcc2; color:#2c221e; font-size:11px; font-weight:bold; cursor:pointer;">☀️ Papel</button>
+                    <button type="button" id="btnKindleTemaEscuro" style="padding:4px 10px; border-radius:6px; border:1px solid #30363d; background:#161b22; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">🌙 Noturno</button>
+                    <button type="button" id="btnKindleAumentarFonte" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:transparent; color:inherit; font-size:11px; font-weight:bold; cursor:pointer;">A+</button>
+                    <button type="button" id="btnFecharGavetaKindle" style="padding:4px 10px; border-radius:6px; border:none; background:#da3633; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">Fechar ✖</button>
+                </div>
+            </div>
+            <p id="textoPaginaKindle">"Dez anos se passaram desde a última aparição do Homem-Morcego em Gotham City. Agora com cinquenta e cinco anos, Bruce Wayne observa a cidade mergulhada no caos e na omissão até que a tempestade rompe a noite — despertando novamente o símbolo do Cavaleiro das Trevas..."</p>
+        </div>
+
+        <h3>Especificações do Terminal</h3>
+        <p><strong>Autor:</strong> Frank Miller</p>
+        <p><strong>Gênero:</strong> Graphic Novel, Investigação & Drama Urbano</p>
+        <p><strong>Sinopse:</strong> Considerada uma das obras mais revolucionárias da história dos quadrinhos, acompanha o retorno de um Bruce Wayne veterano para salvar Gotham City do colapso social, contando com a jovem Carrie Kelley como a nova Robin.</p>
+
+        <div class="ficha-seed-box">
+            <div class="ficha-seed-topo">
+                <strong style="color:#58a6ff; font-size:15px;">🏛️ Ficha Catalográfica & Diretrizes SEED-PR</strong>
+                <span style="background:rgba(0,255,136,0.15); border:1px solid #00ff88; color:#00ff88; font-size:11px; font-weight:bold; padding:3px 10px; border-radius:12px;">Acervo Estadual Catalogado</span>
+            </div>
+            <div class="ficha-seed-grid">
+                <div><strong style="color:#fff;">📌 ISBN-13:</strong> 978-85-7351-820-7</div>
+                <div><strong style="color:#fff;">🗂️ Classificação CDD:</strong> 741.5 (Graphic Novel Clássica)</div>
+                <div><strong style="color:#fff;">📍 Localização Física:</strong> Corredor E • Gibiteca Livre</div>
+                <div><strong style="color:#fff;">📄 Edição:</strong> 224 páginas Coloridas • Panini / DC</div>
+                <div><strong style="color:#fff;">🎯 Faixa Indicada:</strong> A partir de 14 anos</div>
+                <div><strong style="color:#fff;">⏱️ Tempo Médio:</strong> ~2h 15min de leitura</div>
+            </div>
+            <div class="ficha-curiosidade">
+                <strong style="color:#f1c40f;">💡 Curiosidade Histórica:</strong> Publicada em 1986 por Frank Miller, esta obra elevou os quadrinhos ao status de literatura adulta e serviu de inspiração direta para os filmes de Christopher Nolan e Zack Snyder!
+            </div>
+            <div class="ficha-bncc">
+                <p style="margin:0 0 5px 0;"><strong style="color:#ffd700;">🎓 Alinhamento BNCC / Paraná:</strong> Filosofia (Ética & Justiça), Sociologia (Papel da Mídia & Segurança Urbana) e Artes Visuais (EM13LGG602)</p>
+                <p style="margin:0;"><strong style="color:#58a6ff;">🚀 Foco ENEM / UFPR:</strong> Estimula análise crítica sobre mídia, justiça, cidadania e linguagem cinematográfica nas HQs.</p>
+            </div>
+        </div>
+
+        <p id="statusEstoqueLivro" style="font-size:15px; margin: 14px 0;">📦 Estoque Físico Local: <strong style="color:#00ff88;">4 exemplar(es) disponível(is)</strong></p>
+
+        <h3>Solicitar Retirada</h3>
+        <form id="formRetiradaLivro">
+            <label for="alunoNomeLivro">Nome Completo do Aluno:</label>
+            <input type="text" id="alunoNomeLivro" placeholder="Digite seu nome completo" required>
+            <label for="alunoTurmaLivro">Turma:</label>
+            <input type="text" id="alunoTurmaLivro" placeholder="Ex: 2º Técnico S" required>
+            <button type="submit" class="btn-confirmar">📚 Confirmar Empréstimo</button>
+        </form>
+
+        <div class="vitrine-relacionados">
+            <h4>✨ Quem leu "Batman: O Cavaleiro das Trevas" também gostou:</h4>
+            <div class="grid-relacionados">
+                <a href="gibi-batman-absoluto.html" class="card-relacionado">
+                    <img src="../img/batman absoluto.jpg" alt="Batman Absoluto">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Batman Absoluto</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Mesmo Herói • Ver ➔</span></div>
+                </a>
+                <a href="gibi-liga1.html" class="card-relacionado">
+                    <img src="../img/liga%20da%20justiça.jpg" alt="Liga da Justiça: Torre de Babel">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Torre de Babel</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Estratégia Batman • Ver ➔</span></div>
+                </a>
+                <a href="gibi-aranha.html" class="card-relacionado">
+                    <img src="../img/homem%20aranha.jpg" alt="Homem-Aranha: De Volta ao Lar">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Homem-Aranha</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Super-Heróis • Ver ➔</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao-comentarios">
+        <h3 style="color:#58a6ff; font-size:16px; text-transform:uppercase; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:8px;">Avaliações e Terminais de Opinião</h3>
+        <div id="listaComentarios">
+            <div class="comentario-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px;"><strong style="color:#58a6ff; font-size:14px;">👤 Rafael Costa (3º Ano A)</strong><span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span></div>
+                <p style="color:#d0d7de; font-size:14px;">A melhor graphic novel do Batman já escrita! O ritmo da narrativa parece um filme policial.</p>
+            </div>
+        </div>
+        <form id="formNovoComentario" style="margin-top:16px;">
+            <label for="notaComentarioLivro">Sua Nota:</label>
+            <select id="notaComentarioLivro">
+                <option value="5">★★★★★ - Excelente</option>
+                <option value="4">★★★★☆ - Muito Bom</option>
+                <option value="3">★★★☆☆ - Bom</option>
+                <option value="2">★★☆☆☆ - Regular</option>
+                <option value="1">★☆☆☆☆ - Ruim</option>
+            </select>
+            <textarea id="textoNovoComentario" rows="3" placeholder="Escreva sua opinião sobre a obra..." required></textarea>
+            <button type="submit" class="btn-publicar">Publicar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="../JS/temas.js"></script>
+    <script src="../JS/emprestimo.js"></script>
+</body>
+
+</html>

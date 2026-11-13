@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit 451 - Biblioteca do Xandão</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/interno.css">
+</head>
+
+<body>
+    <video autoplay muted loop id="videoFundo"><source src="../img/espacio.mp4" type="video/mp4"></video>
+
+    <header class="header-persistente">
+        <a href="../index.html"><img src="../img/logo professor.png" alt="Biblioteca do Xandão" class="logo-darci"></a>
+        <div class="menu-links">
+            <a href="../index.html">⬅ Voltar ao Catálogo</a>
+            <a href="../cadastro.html">Cadastro</a>
+            <div class="google-profile" title="Conta Oficial"></div>
+            <select id="seletorTema">
+                <option value="galaxia">🌌 Universo Espacial</option>
+                <option value="batman">🦇 Gotham City (Batman)</option>
+                <option value="stranger">🚲 Mundo Invertido (Stranger Things)</option>
+                <option value="aranha">🕷️ Ciberespaço (Homem-Aranha)</option>
+                <option value="hogwarts">🏰 Escola de Magia (Hogwarts)</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="container-interno-livro">
+        <img src="../img/fahrenheit.jpg" alt="Fahrenheit 451">
+        <h2>Fahrenheit 451</h2>
+
+        <div class="barra-acoes-obra">
+            <button type="button" id="btnAbrirDegustacaoDireta" class="btn-acao-kindle">📖 Ler Trecho (Modo Kindle)</button>
+            <button type="button" id="btnFavoritarDireto" class="btn-acao-fav">🤍 Favoritar Obra</button>
+            <button type="button" id="btnCompartilharDireto" class="btn-acao-share">🔗 Compartilhar Link</button>
+        </div>
+
+        <div id="gavetaLeitorKindle" class="gaveta-kindle">
+            <div class="gaveta-kindle-topo">
+                <strong style="font-size:13px;">📖 LEITOR DIGITAL • CAPÍTULO 1 (AMOSTRA GRATUITA)</strong>
+                <div style="display:flex; gap:6px;">
+                    <button type="button" id="btnKindleTemaPapel" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:#e8dcc2; color:#2c221e; font-size:11px; font-weight:bold; cursor:pointer;">☀️ Papel</button>
+                    <button type="button" id="btnKindleTemaEscuro" style="padding:4px 10px; border-radius:6px; border:1px solid #30363d; background:#161b22; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">🌙 Noturno</button>
+                    <button type="button" id="btnKindleAumentarFonte" style="padding:4px 10px; border-radius:6px; border:1px solid #8c7355; background:transparent; color:inherit; font-size:11px; font-weight:bold; cursor:pointer;">A+</button>
+                    <button type="button" id="btnFecharGavetaKindle" style="padding:4px 10px; border-radius:6px; border:none; background:#da3633; color:#fff; font-size:11px; font-weight:bold; cursor:pointer;">Fechar ✖</button>
+                </div>
+            </div>
+            <p id="textoPaginaKindle">"Era um prazer queimar. Era um prazer especial ver coisas sendo devoradas, ver coisas enegrecidas e transformadas. Com o bocal de latão nas mãos, com a grande píton cuspindo seu querosene venenoso sobre o mundo, o sangue pulsava em sua cabeça, e suas mãos eram as mãos de algum maestro fabuloso regendo todas as sinfonias de chamas e incêndios..."</p>
+        </div>
+
+        <h3>Especificações do Terminal</h3>
+        <p><strong>Autor:</strong> Ray Bradbury</p>
+        <p><strong>Gênero:</strong> Ficção Distópica & Defesa da Leitura</p>
+        <p><strong>Sinopse:</strong> Em um futuro onde o pensamento crítico é combatido e todos os livros são proibidos, Guy Montag é um bombeiro cuja função não é apagar incêndios, mas queimar obras literárias — até o dia em que começa a ler secretamente os livros que deveria destruir.</p>
+
+        <div class="ficha-seed-box">
+            <div class="ficha-seed-topo">
+                <strong style="color:#58a6ff; font-size:15px;">🏛️ Ficha Catalográfica & Diretrizes SEED-PR</strong>
+                <span style="background:rgba(0,255,136,0.15); border:1px solid #00ff88; color:#00ff88; font-size:11px; font-weight:bold; padding:3px 10px; border-radius:12px;">Acervo Estadual Catalogado</span>
+            </div>
+            <div class="ficha-seed-grid">
+                <div><strong style="color:#fff;">📌 ISBN-13:</strong> 978-85-250-5224-7</div>
+                <div><strong style="color:#fff;">🗂️ Classificação CDD:</strong> 813.54 (Ficção Norte-Americana)</div>
+                <div><strong style="color:#fff;">📍 Localização Física:</strong> Corredor A • Estante 02</div>
+                <div><strong style="color:#fff;">📄 Edição:</strong> 216 páginas • Biblioteca Azul</div>
+                <div><strong style="color:#fff;">🎯 Faixa Indicada:</strong> A partir de 13 anos</div>
+                <div><strong style="color:#fff;">⏱️ Tempo Médio:</strong> ~4h 15min de leitura</div>
+            </div>
+            <div class="ficha-curiosidade">
+                <strong style="color:#f1c40f;">💡 Curiosidade Científica:</strong> O título <strong>451 °F</strong> (cerca de 233 °C) representa a temperatura em que o papel dos livros entra em combustão espontânea!
+            </div>
+            <div class="ficha-bncc">
+                <p style="margin:0 0 5px 0;"><strong style="color:#ffd700;">🎓 Alinhamento BNCC / Paraná:</strong> Língua Portuguesa, Literatura, Filosofia e Sociologia (EM13LGG101 / EM13CHS502)</p>
+                <p style="margin:0;"><strong style="color:#58a6ff;">🚀 Foco ENEM / UFPR:</strong> Repertório essencial para redações sobre o valor da leitura, censura, liberdade de expressão e superficialidade das telas.</p>
+            </div>
+        </div>
+
+        <p id="statusEstoqueLivro" style="font-size:15px; margin: 14px 0;">📦 Estoque Físico Local: <strong style="color:#00ff88;">4 exemplar(es) disponível(is)</strong></p>
+
+        <h3>Solicitar Retirada</h3>
+        <form id="formRetiradaLivro">
+            <label for="alunoNomeLivro">Nome Completo do Aluno:</label>
+            <input type="text" id="alunoNomeLivro" placeholder="Digite seu nome completo" required>
+            <label for="alunoTurmaLivro">Turma:</label>
+            <input type="text" id="alunoTurmaLivro" placeholder="Ex: 2º Técnico S" required>
+            <button type="submit" class="btn-confirmar">📚 Confirmar Empréstimo</button>
+        </form>
+
+        <div class="vitrine-relacionados">
+            <h4>✨ Quem leu "Fahrenheit 451" também gostou:</h4>
+            <div class="grid-relacionados">
+                <a href="livro-1984.html" class="card-relacionado">
+                    <img src="../img/51oiPQONvoL._SY445_SX342_ML2_.jpg" alt="1984">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">1984</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Distopia Clássica • Ver ➔</span></div>
+                </a>
+                <a href="livro-mundo-novo.html" class="card-relacionado">
+                    <img src="../img/61hOp6UFvCL._SY425_.jpg" alt="Admirável Mundo Novo">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">Admirável Mundo Novo</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Sociedade & Controle • Ver ➔</span></div>
+                </a>
+                <a href="livro-mochileiro.html" class="card-relacionado">
+                    <img src="../img/81zQDb6GMVL._SY385_.jpg" alt="O Guia do Mochileiro">
+                    <div><strong style="font-size:16px; display:block; color:#fff; margin-bottom:4px;">O Guia do Mochileiro</strong><span style="font-size:12px; color:#58a6ff; font-weight:bold;">Ficção Científica • Ver ➔</span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="secao-comentarios">
+        <h3 style="color:#58a6ff; font-size:16px; text-transform:uppercase; margin-bottom:16px; border-bottom:1px solid rgba(255,255,255,0.12); padding-bottom:8px;">Avaliações e Terminais de Opinião</h3>
+        <div id="listaComentarios">
+            <div class="comentario-item" style="margin-bottom:18px; padding-bottom:14px; border-bottom:1px solid rgba(255,255,255,0.08);">
+                <div style="display:flex; justify-content:space-between; margin-bottom:6px;"><strong style="color:#58a6ff; font-size:14px;">👤 Gustavo Henrique (2º Ano A)</strong><span style="color:#ffd700; font-size:13px; font-weight:bold;">★★★★★ - Excelente</span></div>
+                <p style="color:#d0d7de; font-size:14px;">Um livro curto mas com uma mensagem gigante sobre a importância de ler e pensar por conta própria!</p>
+            </div>
+        </div>
+        <form id="formNovoComentario" style="margin-top:16px;">
+            <label for="notaComentarioLivro">Sua Nota:</label>
+            <select id="notaComentarioLivro">
+                <option value="5">★★★★★ - Excelente</option>
+                <option value="4">★★★★☆ - Muito Bom</option>
+                <option value="3">★★★☆☆ - Bom</option>
+                <option value="2">★★☆☆☆ - Regular</option>
+                <option value="1">★☆☆☆☆ - Ruim</option>
+            </select>
+            <textarea id="textoNovoComentario" rows="3" placeholder="Escreva sua opinião sobre a obra..." required></textarea>
+            <button type="submit" class="btn-publicar">Publicar Avaliação</button>
+        </form>
+    </div>
+
+    <script src="../JS/temas.js"></script>
+    <script src="../JS/emprestimo.js"></script>
+</body>
+
+</html>
